@@ -1,0 +1,27 @@
+{
+  "name": "farm2u",
+  "version": "1.0.0",
+  "description": "find farmers' markets and connect with local farmers",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theronhalsey/farm2u.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theronhalsey/farm2u/issues"
+  },
+  "homepage": "https://github.com/theronhalsey/farm2u#readme"
+}
