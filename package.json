@@ -4,10 +4,12 @@
   "description": "find farmers' markets and connect with local farmers",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "sequelize": "^4.37.7"
   },
   "devDependencies": {},
   "scripts": {
