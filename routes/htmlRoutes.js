@@ -16,3 +16,6 @@ var router = express.Router();
         res.render("farmer");
     });
 
+ 
+
+module.exports = router;
