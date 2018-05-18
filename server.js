@@ -1,7 +1,7 @@
 // Required dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var path = require("path");
 var PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -22,9 +22,13 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/farm2u_controller.js");
+var routes = require("./routes/htmlRoutes.js");
 
-app.use(routes);
+app.get( '/', function(req, res) {
+  console.log("sending file");
+  res.sendFile( path.join(__dirname, './views/layouts/index-1.html') );
+});
+// app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
