@@ -1,16 +1,21 @@
+var express = require("express");
 var path = require("path");
+var router = express.Router();
 
-module.exports = function(app) {
-    app.get( '/', function(req, res) {
+
+    router.get( '/', function(req, res) {
         console.log("sending file");
-        res.render("index.hbs");
+        res.render("index");
     });
-    app.get( '/customer', function(req, res) {
+    router.get( '/customer', function(req, res) {
         console.log("sending file");
         res.render("customer");
     });
-    app.get( '/farmer', function(req, res) {
+    router.get( '/farmer', function(req, res) {
         console.log("sending file");
         res.render("farmer");
     });
-};
+
+ 
+
+module.exports = router;
