@@ -15,7 +15,7 @@ body{ background:#262523; border:0; font: 12px Arial, Helvetica, sans-serif; col
 
 #inner{max-width: 1000px; margin: 0 auto; position: relative;}
 
-#inner2{background: url(../images/inner2.jpg) center top no-repeat #f9f8f1; padding-top: 30px; padding-bottom: 30px;}
+#inner2{background: url(/assets/images/inner2.jpg) center top no-repeat #f9f8f1; padding-top: 30px; padding-bottom: 30px;}
 
 /* ============================= header ====================== */
 header{position: absolute; width: 100%; left: 0; top: 0; z-index: 30;}
@@ -31,7 +31,7 @@ header{position: absolute; width: 100%; left: 0; top: 0; z-index: 30;}
 .social{ display: inline-block; margin: 0 0px; padding-top: 10px; list-style: none; white-space: nowrap;}
 .social li{display: inline-block; margin: 0 2px; float: left;}
 
-.top2{height: 41px; background: url(../images/nav_bg.jpg) 0 0 repeat-x; position: relative; z-index: 1;}
+.top2{height: 41px; background: url(/assets/images/nav_bg.jpg) 0 0 repeat-x; position: relative; z-index: 1;}
 .top2_inner{padding-left: 255px;}
 
 /* ============================= slider ====================== */
@@ -39,8 +39,8 @@ header{position: absolute; width: 100%; left: 0; top: 0; z-index: 30;}
 
 /* ============================= content ====================== */
 #content{position: relative; z-index: 10;}
-.subpage #content{background: url(../images/page_title.png);  margin-top: -110px;}
-#content2{background: url(../images/content_bg.jpg) left bottom repeat-x; padding-top: 0px; padding-bottom: 0px; }
+.subpage #content{background: url(/assets/images/page_title.png);  margin-top: -110px;}
+#content2{background: url(/assets/images/content_bg.jpg) left bottom repeat-x; padding-top: 0px; padding-bottom: 0px; }
 
 /* ============================= footer ====================== */
 footer{position: relative; z-index: 1; background: #0f0f0f; padding: 25px 0 20px 0; }

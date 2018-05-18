@@ -97,14 +97,14 @@
 	z-index: 2;
 }
 .camera_target_content .camera_link {
-    background: url(../images/blank.gif);
+    background: url(/assets/images/blank.gif);
 	display: block;
 	height: 100%;
 	text-decoration: none;
 }
 .camera_loader {
-    background: #fff url(../images/camera-loader.gif) no-repeat center;
-	background: rgba(255, 255, 255, 0.9) url(../images/camera-loader.gif) no-repeat center;
+    background: #fff url(/assets/images/camera-loader.gif) no-repeat center;
+	background: rgba(255, 255, 255, 0.9) url(/assets/images/camera-loader.gif) no-repeat center;
 	border: 1px solid #ffffff;
 	-webkit-border-radius: 18px;
 	-moz-border-radius: 18px;
@@ -173,7 +173,7 @@
 	z-index: 10;
 }
 .camera_prevThumbs div {
-	background: url(../images/camera_skins.png) no-repeat -160px 0;
+	background: url(/assets/images/camera_skins.png) no-repeat -160px 0;
 	display: block;
 	height: 40px;
 	margin-top: -20px;
@@ -192,7 +192,7 @@
 	z-index: 10;
 }
 .camera_nextThumbs div {
-	background: url(../images/camera_skins.png) no-repeat -190px 0;
+	background: url(/assets/images/camera_skins.png) no-repeat -190px 0;
 	display: block;
 	height: 40px;
 	margin-top: -20px;
@@ -292,7 +292,7 @@
 	left: 0;
 }
 .camera_prev > span {
-	background: url(../images/camera_skins.png) no-repeat 0 0;
+	background: url(/assets/images/camera_skins.png) no-repeat 0 0;
 	display: block;
 	height: 40px;
 	width: 40px;
@@ -301,7 +301,7 @@
 	right: 0;
 }
 .camera_next > span {
-	background: url(../images/camera_skins.png) no-repeat -40px 0;
+	background: url(/assets/images/camera_skins.png) no-repeat -40px 0;
 	display: block;
 	height: 40px;
 	width: 40px;
@@ -310,12 +310,12 @@
 	right: 41px;
 }
 .camera_commands > .camera_play {
-	background: url(../images/camera_skins.png) no-repeat -80px 0;
+	background: url(/assets/images/camera_skins.png) no-repeat -80px 0;
 	height: 40px;
 	width: 40px;
 }
 .camera_commands > .camera_stop {
-	background: url(../images/camera_skins.png) no-repeat -120px 0;
+	background: url(/assets/images/camera_skins.png) no-repeat -120px 0;
 	display: block;
 	height: 40px;
 	width: 40px;
@@ -394,34 +394,34 @@
 *
 **************************/
 .pattern_1 .camera_overlayer {
-	background: url(../images/patterns/overlay1.png) repeat;
+	background: url(/assets/images/patterns/overlay1.png) repeat;
 }
 .pattern_2 .camera_overlayer {
-	background: url(../images/patterns/overlay2.png) repeat;
+	background: url(/assets/images/patterns/overlay2.png) repeat;
 }
 .pattern_3 .camera_overlayer {
-	background: url(../images/patterns/overlay3.png) repeat;
+	background: url(/assets/images/patterns/overlay3.png) repeat;
 }
 .pattern_4 .camera_overlayer {
-	background: url(../images/patterns/overlay4.png) repeat;
+	background: url(/assets/images/patterns/overlay4.png) repeat;
 }
 .pattern_5 .camera_overlayer {
-	background: url(../images/patterns/overlay5.png) repeat;
+	background: url(/assets/images/patterns/overlay5.png) repeat;
 }
 .pattern_6 .camera_overlayer {
-	background: url(../images/patterns/overlay6.png) repeat;
+	background: url(/assets/images/patterns/overlay6.png) repeat;
 }
 .pattern_7 .camera_overlayer {
-	background: url(../images/patterns/overlay7.png) repeat;
+	background: url(/assets/images/patterns/overlay7.png) repeat;
 }
 .pattern_8 .camera_overlayer {
-	background: url(../images/patterns/overlay8.png) repeat;
+	background: url(/assets/images/patterns/overlay8.png) repeat;
 }
 .pattern_9 .camera_overlayer {
-	background: url(../images/patterns/overlay9.png) repeat;
+	background: url(/assets/images/patterns/overlay9.png) repeat;
 }
 .pattern_10 .camera_overlayer {
-	background: url(../images/patterns/overlay10.png) repeat;
+	background: url(/assets/images/patterns/overlay10.png) repeat;
 }
 .camera_caption {
 	color: #fff;
@@ -1074,7 +1074,7 @@
 .camera_wrap .camera_pag .camera_pag_ul li:hover, .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent{background-position: right;}
 .camera_wrap .camera_pag .camera_pag_ul li span{display: none;}
 
-.camera_caption{ position: absolute; left: 0; bottom: 0px;background: url(../images/camera_caption_px1.png);}
+.camera_caption{ position: absolute; left: 0; bottom: 0px;background: url(/assets/images/camera_caption_px1.png);}
 .camera_caption > div{ width: 940px; margin: 0 auto; padding: 20px 0; background: none; }
 .camera_caption .txt1{font-family: 'Roboto'; font-weight: 700; font-size: 40px; line-height: 40px; color: #fff;}
 .camera_caption .txt2{font-family: 'Roboto'; font-weight: 300; font-size: 40px; line-height: 40px; color: #fff;}
