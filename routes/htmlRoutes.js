@@ -3,7 +3,7 @@ var path = require("path");
 module.exports = function(app) {
     app.get( '/', function(req, res) {
         console.log("sending file");
-        res.render("index.hbs");
+        res.render("index");
     });
     app.get( '/customer', function(req, res) {
         console.log("sending file");
