@@ -1,8 +1,8 @@
-
+<body class="subpage">
     <div id="main">
 
         <header>
-            <div class="logo_wrapper"><a href="index-1.html" class="logo"><img src="/assets/images/logo.png" alt=""></a></div>
+            <div class="logo_wrapper"><a href="index-1.html" class="logo"><img src="images/logo.png" alt=""></a></div>
             <div class="top1">
                 <div class="container">
                     <div class="row">
@@ -13,9 +13,9 @@
                                     <div class="txt1">Follow us:</div>
                                     <div class="social_wrapper">
                                         <ul class="social clearfix">
-                                            <li><a href="#"><img src="../public/assets/images/social_ic1.png"></a></li>
-                                            <li><a href="#"><img src="../assets/images/social_ic2.png"></a></li>
-                                            <li><a href="#"><img src="../assets/images/social_ic3.png"></a></li>
+                                            <li><a href="#"><img src="images/social_ic1.png"></a></li>
+                                            <li><a href="#"><img src="images/social_ic2.png"></a></li>
+                                            <li><a href="#"><img src="images/social_ic3.png"></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -84,9 +84,10 @@
                 </div>
             </div>
         </header>
+
         <div id="slider" class="clearfix">
             <div id="camera_wrap">
-                <img src="/assets/images/slide1.jpg"></img>
+                <div data-src="images/slide1.jpg"></div>
             </div>
         </div>
 
@@ -108,21 +109,62 @@
                             <div class="row">
                                 <div class="span9">
 
-                                    <h1>Who We Are</h1>
+                                    <h1>Register You Farm or Organic Business</h1>
 
                                     <div class="thumb3">
                                         <div class="thumbnail clearfix">
-                                            <figure class="img-polaroid"><img src="/assets/images/company01.jpg" alt=""></figure>
+                                            <figure class="img-polaroid"><img src="images/company01.jpg" alt=""></figure>
                                             <div class="caption">
                                                 <h4>
-                                                    The freshest, most wholesome food for you and your family
+                                                    Sign up now so customers can find you
                                                 </h4>
-                                                <p>
-                                                    Our mission is to create a better food system, that’s better for the eaters and better for the farmers. The way we do this is we connect the farms and organic producers directly with the consumers.
-                                                </p>
-                                                <p>
-                                                    We allow consumers to get their food direct from harvest, so that it is fresher than anything they can get at the supermarket. You'll know exactly from where you food is coming.
-                                                </p>
+                                                <div class="bot2 clearfix">
+                                                    <div class="search-form-wrapper clearfix">
+                                                        <form id="farm-reg" action="search.php" method="GET" accept-charset="utf-8">
+                                                            <input type="text" id="farm-name" name="s" value='Farm Name' onBlur="if(this.value=='') this.value='Farm Name'" onFocus="if(this.value =='Farm Name' ) this.value=''">
+                                                            <input type="text" id="farm-cont" name="s" value='Farm Contact' onBlur="if(this.value=='') this.value='Farm Contact'" onFocus="if(this.value =='Farm Contact' ) this.value=''">
+                                                            <input type="text" id="farm-zip" name="s" value='Farm Zip Code' onBlur="if(this.value=='') this.value='Farm Zip Code'" onFocus="if(this.value =='Farm Zip Code' ) this.value=''">
+                                                            <p>Select product types available below</p>
+                                                            
+                                                            <div id="CheckBoxes1" style="text-align:left;">
+                                                                <table border="0" style="width:705px;">
+
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td><input name="chkProd01" type="checkbox" id="chkProd01" value="Bakedgoods" class="form-check-input"></td>
+                                                                            <td><span id="chkProd01L">Baked goods</span></td>
+                                                                            <td><input name="chkProd02" type="checkbox" id="chkProd02" value="Cheese" class="form-check-input"></td>
+                                                                            <td><span id="chkProd02L">Cheese and/or dairy products</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><input name="chkProd05" type="checkbox" id="chkProd05" value="Eggs" class="form-check-input"></td>
+                                                                            <td><span id="chkProd05L">Eggs</span></td>
+                                                                            <td><input name="chkProd06" type="checkbox" id="chkProd06" value="Seafood" class="form-check-input"></td>
+                                                                            <td><span id="chkProd06L">Fish and/or seafood</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><input name="chkProd22" type="checkbox" id="chkProd22" value="Fruits" class="box"></td>
+                                                                            <td><span id="chkProd22L">Fresh fruits</span></td>
+                                                                            <td><input name="chkProd08" type="checkbox" id="chkProd08" value="Vegetables" class="form-check-input"></td>
+                                                                            <td><span id="chkProd08L">Fresh vegetables</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><input name="chkProd12" type="checkbox" id="chkProd12" value="Meat" class="box"></td>
+                                                                            <td><span id="chkProd12L">Meat</span></td>
+                                                                            <td><input name="chkProd15" type="checkbox" id="chkProd15" value="Poultry" class="box"></td>
+                                                                            <td><span id="chkProd15L">Poultry</span></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            
+                                                            <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                                                        </form>
+                                                        <div class="btn-group" role="group" aria-label="...">
+                                                            <button type="button" class="btn btn-success">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +251,7 @@
                                     </div>-->
                                     <div class="span3">
 
-                                        <h3>Search For Products</h3>
+                                        <!--<h3>Search For Products</h3>
                                         <p>Enter your zip code and product or product type to see  farm markets near the zip code.</p>
 
                                         <div class="bot2 clearfix">
@@ -223,7 +265,7 @@
                                                     <button type="button" class="btn btn-success">Search</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
 
 
                                         <!--<div class="thumb6">
@@ -293,3 +335,6 @@
             </footer>
 
         </div>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>
