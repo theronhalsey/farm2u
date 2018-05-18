@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "MySqueekWll2018!",
-    "database": "farm2u!",
+    "database": "farm2u_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -16,7 +16,7 @@
   "production": {
     "username": "theron",
     "password": " ",
-    "database": "farm2u",
+    "database": "farm2u_db",
     "host": "farm2u-db.crz32kjpg82l.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   }
