@@ -21,9 +21,13 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/farm2u_controller.js");
+ var routes = require("./routes/htmlRoutes.js");
+// var farmController = require("./controllers/farm2u_controller.js");
+// app.get( '/', function(req, res) {
+//     res.render('index' );
+// });
+app.use('/', routes);
 
-app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
