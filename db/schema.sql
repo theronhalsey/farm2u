@@ -19,7 +19,16 @@ CREATE TABLE product
 	productName VARCHAR (255) NOT NULL,
     productAvailable BOOLEAN NOT NULL DEFAULT 1,
     productDescription TEXT,
+	productID INT (10) NOT NULL,
 	PRIMARY KEY (id)
 );
 
 select * from product;
+
+
+CREATE TABLE productType
+(
+	typeId int NOT NULL AUTO_INCREMENT,
+	productType VARCHAR (255) NOT NULL,
+	PRIMARY KEY (id)
+)
