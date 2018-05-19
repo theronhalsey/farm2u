@@ -7,11 +7,19 @@ const DB_PASSWORD = process.env.RDS_PASSWORD;
 const DB_PORT = process.env.RDS_PORT; */
 
 
+//const connection = mysql.createConnection({
+//    host: "farm2u-db.crz32kjpg82l.us-east-2.rds.amazonaws.com",
+//    user: "theron",
+//    password: " ",
+//    port: 3006
+//});
+
 const connection = mysql.createConnection({
-    host: "farm2u-db.crz32kjpg82l.us-east-2.rds.amazonaws.com",
-    user: "theron",
-    password: "  ",
-    port: 3006
+    host: "localhost",
+    user: "process.env.db_id",
+    password: "process.env.db_pass",
+    port: 3306,
+    database: "farm2u_db"
 });
 
 connection.connect( function (err) {

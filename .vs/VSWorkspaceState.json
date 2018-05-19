@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\views",
-    "\\views\\layouts"
+    "\\config",
+    "\\controllers",
+    "\\db",
+    "\\models",
+    "\\public",
+    "\\public\\assets",
+    "\\public\\assets\\js",
+    "\\routes",
+    "\\views"
   ],
   "PreviewInSolutionExplorer": false
 }

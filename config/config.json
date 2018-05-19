@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "root",
-    "password": "MySqueekWll2018!",
+    "password": "",
     "database": "farm2u_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "09Les19AntCWH2014",
+    "database": "farm2u_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "theron",
-    "password": " ",
+    "username": "root",
+    "password": "09Les19AntCWH2014",
     "database": "farm2u_db",
-    "host": "farm2u-db.crz32kjpg82l.us-east-2.rds.amazonaws.com",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
