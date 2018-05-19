@@ -13,5 +13,13 @@ module.exports = function (sequelize, DataTypes) {
         });
     };
 
+    productType.associate = function (models) {
+        productType.belongsTo(models.Farmer, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return productType;
 };
