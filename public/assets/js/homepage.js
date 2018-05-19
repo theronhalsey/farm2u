@@ -11,9 +11,9 @@ $(document).ready(function () {
             prod_type: $("#prod_type").val().trim()
         };
         console.log(prodSearch);
-        //Send the POST request.
+        //Send the GET request.
         $.ajax("/api/prod_search", {
-            type: "POST",
+            type: "GET",
             data: prodSearch
 
         }).then(
