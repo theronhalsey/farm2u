@@ -16,6 +16,7 @@ $(document).ready(function () {
             type: "GET",
             data: prodSearch
 
+
         }).then(
             function (response) {
                 console.log(data);

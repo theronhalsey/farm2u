@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
     Farmer.associate = function (models) {
-        Farmer.hasMany(models.productType, {
+        Farmer.hasMany(models.product, {
         });
     };
 

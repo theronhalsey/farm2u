@@ -26,6 +26,11 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+        Product.belongsTo(models.farmer, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
 
     return Product;
