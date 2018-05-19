@@ -1,3 +1,5 @@
+USE farm2u_db;
+
 INSERT INTO farm (farmName, farmZip) VALUES ('Sunny Brook', 19118);
 INSERT INTO farm (farmName, farmZip) VALUES ('brookfieled', 19228);
 

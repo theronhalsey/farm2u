@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var productType = sequelize.define("productType", {
-        farmName: {
+        ProductTypeName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -8,16 +8,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     });
-    productType.associate = function (models) {
-        productType.hasMany(models.Products, {
-        });
-    };
 
     productType.associate = function (models) {
         productType.belongsTo(models.Farmer, {
             foreignKey: {
                 allowNull: false
             }
+        });
+        productType.hasMany(models.Product, {
         });
     };
 
