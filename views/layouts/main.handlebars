@@ -1,26 +1,22 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>Organic-ness</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Your name">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
-
     <link rel="stylesheet" href="/assets/css/bootstrap.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/assets/css/bootstrap-responsive.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/assets/css/camera.css" type="text/css" media="screen">
 
-
-
+    <script type="text/javascript" src="/assets/js/jquery.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="/assets/js/superfish.js"></script>
-
     <script type="text/javascript" src="/assets/js/jquery.ui.totop.js"></script>
     <script type="text/javascript" src="/assets/js/camera.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.mobile.customized.min.js"></script>
@@ -70,8 +66,43 @@
     <![endif]-->
 </head>
 <body>
-
     {{{body}}}
-
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        /////// icons
+        $(".social li").find("a").css({ opacity: 0.6 });
+        $(".social li a").hover(function () {
+            $(this).stop().animate({ opacity: 1 }, 400, 'easeOutExpo');
+        }, function () {
+            $(this).stop().animate({ opacity: 0.6 }, 400, 'easeOutExpo');
+        });
+
+        // camera
+        $('#camera_wrap').camera({
+            //thumbnails: true
+            autoAdvance: false,
+            mobileAutoAdvance: false,
+            height: '37%',
+            hover: false,
+            loader: 'none',
+            navigation: false,
+            navigationHover: false,
+            mobileNavHover: false,
+            playPause: false,
+            pauseOnClick: false,
+            pagination: false,
+            time: 7000,
+            transPeriod: 1000,
+            minHeight: '300px'
+        });
+
+
+
+    }); //
+    $(window).load(function () {
+        //
+
+    }); //
+</script>
