@@ -33,8 +33,8 @@ module.exports = function (app) {
                 productID: req.params.id
             },
             include: [db.Farmer]
-        }).then(function (dbFarmer) {
-            res.json(dbFarmer);
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
         });
     });
 
@@ -45,8 +45,8 @@ module.exports = function (app) {
                 typeID: req.params.id
             },
             include: [db.Product]
-        }).then(function (dbProduct) {
-            res.json(dbProduct);
+        }).then(function (dbProductType) {
+            res.json(dbProductType);
         });
     });
 

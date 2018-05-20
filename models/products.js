@@ -27,10 +27,12 @@ module.exports = function (sequelize, DataTypes) {
 
     Product.associate = function (models) {
         Product.belongsTo(models.ProductType, {
-            foreignKey: "typeID"
+            foreignKey: "typeID",
+            allowNull: false
             })
         Product.belongsTo(models.Farmer, {
-            foreignKey: "farmID"
+            foreignKey: "farmID",
+            allowNull: false
             })
     };
 
