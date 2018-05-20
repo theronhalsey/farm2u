@@ -23,7 +23,8 @@ module.exports = function (sequelize, DataTypes) {
     });
     Farmer.associate = function (models) {
         Farmer.hasMany(models.Product, {
-            foreignKey: "productID"
+            foreignKey: "productID",
+            allowNull: false
         });
     };
     
