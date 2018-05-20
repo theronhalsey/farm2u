@@ -21,6 +21,8 @@ CREATE TABLE product
 	productName VARCHAR (255) NOT NULL,
     productAvailable BOOLEAN NOT NULL DEFAULT 1,
     productDescription TEXT,
+    farmID int,
+    typeID int,
 	PRIMARY KEY (productId)
 );
 

@@ -7,8 +7,8 @@ module.exports = function (app) {
         console.log(req.body);
 
         Farmdb.productType.findAll({
-            console.log("req.body.prod_type")
-            req.body.prod_type;
+            console.log(req.body.prod_type)
+          //  req.body.prod_type;
         }).then(function (dbAuthor) {
             res.json(dbAuthor);
         });
