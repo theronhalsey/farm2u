@@ -19,10 +19,8 @@ $(document).ready(function () {
 
         }).then(
             function (response) {
-                console.log(data);
+                console.log(response);
 
-                data.name
-                data.picture.
                     console.log("created new quote");
                 // Reload the page to get the updated list
                 //location.reload();
