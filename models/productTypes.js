@@ -20,12 +20,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     productType.associate = function (models) {
-        productType.belongsTo(models.Farmer, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
         productType.hasMany(models.Product, {
+            as: "Product",
+            foreignKey: "typeID"
         });
     };
 

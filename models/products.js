@@ -32,15 +32,11 @@ module.exports = function (sequelize, DataTypes) {
 
     Product.associate = function (models) {
         Product.belongsTo(models.productType, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-        Product.belongsTo(models.farmer, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+            foreignKey: "typeID"
+            })
+        Product.belongsTo(models.Farmer, {
+            foreignKey: "productId"
+            })
     };
 
     return Product;
