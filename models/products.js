@@ -17,15 +17,20 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
+        },
+        productID: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         }
     });
 
     Product.associate = function (models) {
-        Product.belongsTo(models.productType, {
+        Product.belongsTo(models.ProductType, {
             foreignKey: "typeID"
             })
         Product.belongsTo(models.Farmer, {
-            foreignKey: "productId"
+            foreignKey: "farmID"
             })
     };
 
