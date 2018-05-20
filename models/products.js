@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
         Product.belongsTo(models.productType, {
             foreignKey: "typeID"
             })
-        Product.belongsTo(models.farmer, {
+        Product.belongsTo(models.Farmer, {
             foreignKey: "productId"
             })
     };
