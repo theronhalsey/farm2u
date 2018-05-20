@@ -18,6 +18,8 @@ module.exports = function (sequelize, DataTypes) {
     });
     Farmer.associate = function (models) {
         Farmer.hasMany(models.product, {
+            as: "Product",
+            foreignKey: "farmID"
         });
     };
 
