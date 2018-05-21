@@ -37,7 +37,7 @@ $(document).ready(function () {
                 var farmName = results[i].marketname;
                 // console.log(farmId);
                 // console.log(farmName);
-                    farmList =$("<h3>" + "List of farms near your location:"+ "<br>" + "<h3>" + "<li>" + "Farm ID:" +  farmId + "<br>"+ "Farm Name:"+ farmName+ "<br>"+  "</li>").appendTo("#farmDisplay");
+                    farmList +=$("<h3>" + "List of farms near your location:"+ "<br>" + "<h3>" + "<li>" + "Farm ID:" +  farmId + "<br>"+ "Farm Name:"+ farmName+ "<br>"+  "</li>").appendTo("#farmDisplay");
                 }
               
             });
