@@ -9,8 +9,8 @@ module.exports = {
         dialect: process.env.RDS_DIALECT
     },
     test: {
-        username: process.env.LOCAL_USER,
-        password: process.env.LOCAL_PASS,
+        username: process.env.LOCAL_USERNAME,
+        password: process.env.LOCAL_PASSWORD,
         database: process.env.LOCAL_DATABASE,
         host: process.env.LOCAL_HOST,
         dialect: process.env.LOCAL_DIALECT

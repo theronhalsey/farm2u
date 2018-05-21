@@ -1,6 +1,7 @@
 $(document).ready(function () {
     console.log("hi!!");
 
+    let farmersMarkets = [];
 
     $("#prod_search").on("click", function (event) {
         event.preventDefault();
@@ -9,7 +10,7 @@ $(document).ready(function () {
             zip: $("#zip").val().trim(),
             prod_type: $("#prod_type").val().trim()
         };
-        
+//search for farmers markets        
         zip = prodSearch.zip;
         console.log(zip);
         $.ajax({
@@ -29,10 +30,11 @@ $(document).ready(function () {
                         }
                     }
                 }
-                console.log(results)
+                farmersMarkets = results
+                console.log(farmersMarkets)
             });
         console.log(prodSearch);
-        //Send the GET request.
+//Send the GET request.
         $.ajax("/api/prod_search", {
             type: "GET",
             data: prodSearch
