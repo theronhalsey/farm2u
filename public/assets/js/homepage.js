@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    console.log("hi!!");
+    // console.log("hi!!");
 
     let farmersMarkets = [];
-
+    var farmList;
     $("#prod_search").on("click", function (event) {
         event.preventDefault();
 
@@ -12,7 +12,8 @@ $(document).ready(function () {
         };
 //search for farmers markets        
         zip = prodSearch.zip;
-        console.log(zip);
+      
+        // console.log(zip);
         $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
@@ -20,8 +21,9 @@ $(document).ready(function () {
             dataType: 'jsonp'
         }).then(
             function (response) {
-                for (var key in response) {
-                    var results = response[key];
+                 var results;
+                  for (var key in response) {
+                    results = response[key];
                     for (var i = 0; i < results.length; i++) {
                         var result = results[i];
                         for (var key in result) {
@@ -30,10 +32,20 @@ $(document).ready(function () {
                         }
                     }
                 }
-                farmersMarkets = results
-                console.log(farmersMarkets)
+                for (var i = 0; i < results.length; i++) {
+                var farmId = results[i].id;
+                var farmName = results[i].marketname;
+                // console.log(farmId);
+                // console.log(farmName);
+                    farmList =$("<h3>" + "List of farms near your location:"+ "<br>" + "<h3>" + "<li>" + "Farm ID:" +  farmId + "<br>"+ "Farm Name:"+ farmName+ "<br>"+  "</li>").appendTo("#farmDisplay");
+                }
+              
             });
-        console.log(prodSearch);
+
+
+
+
+        // console.log(prodSearch);
 //Send the GET request.
         $.ajax("/api/prod_search", {
             type: "GET",
@@ -42,9 +54,10 @@ $(document).ready(function () {
 
         }).then(
             function (response) {
-                console.log(response);
+                // console.log(farmersMarkets);
 
-                console.log("created new quote");
+                // console.log("created new quote");
+                // console.log(response.id);
                 // Reload the page to get the updated list
                 //location.reload();
             }
@@ -52,4 +65,4 @@ $(document).ready(function () {
 
     });
 
-})
+});
