@@ -1,20 +1,25 @@
 module.exports = function (sequelize, DataTypes) {
-    var productType = sequelize.define("productType", {
+    var ProductType = sequelize.define("ProductType", {
         productTypeName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
+        },
+        typeID: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         }
     });
 
-    productType.associate = function (models) {
-        productType.hasMany(models.Product, {
-            as: "Product",
-            foreignKey: "typeID"
+    ProductType.associate = function (models) {
+        ProductType.hasMany(models.Product, {
+            foreignKey: "productID",
+            allowNull: false
         });
     };
 
-    return productType;
+    return ProductType;
 };

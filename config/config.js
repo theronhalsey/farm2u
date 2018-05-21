@@ -9,11 +9,11 @@ module.exports = {
         dialect: process.env.RDS_DIALECT
     },
     test: {
-        username: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: process.env.DB_DATABASE,
-        host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT
+        username: process.env.LOCAL_USERNAME,
+        password: process.env.LOCAL_PASSWORD,
+        database: process.env.LOCAL_DATABASE,
+        host: process.env.LOCAL_HOST,
+        dialect: process.env.LOCAL_DIALECT
     },
     production: {
         username: process.env.RDS_USERNAME,
