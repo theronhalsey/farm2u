@@ -41,8 +41,12 @@ $(document).ready(function () {
 
                  farmId = results[i].id;
                  farmName = results[i].marketname;
-                $("<br>" + "<li>" + "Farm ID:" + farmId + "<br>" + "Farm Name:" + farmName + "<br>" + "<div id='more'> </div>" + "<br>" + "</li>").appendTo("#farmDisplay") 
+
+                 // take this line and pass it as an argument to get details
+                $("<br>" + "<li>" + "Farm ID:" + farmId + "<br>" + "Farm Name:" + farmName + "<br>" + "<div id='more'> </div>" + "<br>" + "</li>").appendTo("#farmDisplay"); 
                 
+                // add a second argument here, like: 
+                 getDetails(farmId, farmInfoString);
          getDetails(farmId);
                 // console.log(farmList);
             }
@@ -50,7 +54,7 @@ $(document).ready(function () {
     });
 
 
-
+    // expect a second argument farmInfoString
     function getDetails(farmId) {
 
         $.ajax({
@@ -83,6 +87,8 @@ $(document).ready(function () {
             // console.log(products);
             // console.log(schedule);
             // console.log(googleLink);
+            
+            // append farmInfo string to the DOM
           $("<br>" + "Address:" + "<br>" + address + "<br>" + "Google Link" + "<br>"  + googleLink + "<br>" + "Products:" + products + "<br>" + "Schedule:" + schedule).appendTo("#more");
 
         });

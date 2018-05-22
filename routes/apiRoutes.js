@@ -97,6 +97,12 @@ module.exports = function (app) {
         });
     });
 
+      //post new type
+    //   app.post("/api/customer", function (req, res) {
+    //     db.ProductType.create(req.body).then(function (dbProductType) {
+    //         res.json(dbProductType);
+    //     });
+    // });
 
 
 

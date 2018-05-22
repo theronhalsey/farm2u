@@ -2,20 +2,38 @@
     <div id="main">
 
         <header>
-            <div class="logo_wrapper"><a href="index-1.html" class="logo"><img src="/assets/images/logo.png" alt=""></a></div>
+            <div class="logo_wrapper">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.png" alt="Logo">
+                </a>
+            </div>
             <div class="top1">
                 <div class="container">
                     <div class="row">
                         <div class="span12">
                             <div class="top1_inner clearfix">
-                                <div class="phone1">Need Help? Call us: <span>1.123.456.7890</span></div>
+                                <div class="phone1">Need Help? Call us:
+                                    <span>1.123.456.7890</span>
+                                </div>
                                 <div class="phone2 clearfix">
                                     <div class="txt1">Follow us:</div>
                                     <div class="social_wrapper">
                                         <ul class="social clearfix">
-                                            <li><a href="#"><img src="images/social_ic1.png"></a></li>
-                                            <li><a href="#"><img src="images/social_ic2.png"></a></li>
-                                            <li><a href="#"><img src="images/social_ic3.png"></a></li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="images/social_ic1.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="images/social_ic2.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="images/social_ic3.png">
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -38,13 +56,21 @@
                                         </a>
                                         <div class="nav-collapse nav-collapse_ collapse">
                                             <ul class="nav sf-menu clearfix">
-                                                <li><a href="/">Home</a></li>
+                                                <li>
+                                                    <a href="/">Home</a>
+                                                </li>
                                                 <!--<li class="active"><a href="index-1.html">Company </a></li>-->
                                                 <li class="sub-menu sub-menu-1">
-                                                    <a href="#">Join Us<em></em></a>
+                                                    <a href="#">Join Us
+                                                        <em></em>
+                                                    </a>
                                                     <ul>
-                                                        <li><a href="/customer">Create Customer Account</a></li>
-                                                        <li><a href="/farmer">Register Farm / Organic Business</a></li>
+                                                        <li>
+                                                            <a href="/customer">Create Customer Account</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/farmer">Register Farm / Organic Business</a>
+                                                        </li>
                                                         <!--<li class="sub-menu sub-menu-2"><a href="index-1.html">History<em></em></a>
                                                             <ul>
                                                                 <li><a href="index-2.html">lorem ipsum dolor</a></li>
@@ -113,17 +139,21 @@
 
                                     <div class="thumb3">
                                         <div class="thumbnail clearfix">
-                                            <figure class="img-polaroid"><img src="images/company01.jpg" alt=""></figure>
+                                            <figure class="img-polaroid">
+                                                <img src="images/company01.jpg" alt="">
+                                            </figure>
                                             <div class="caption">
                                                 <h4>
                                                     Create a Customer Profile with Us
                                                 </h4>
                                                 <div class="bot2 clearfix">
                                                     <div class="search-form-wrapper clearfix">
-                                                        <form id="cust-reg" action="search.php" method="GET" accept-charset="utf-8">
+                                                        <form id="cust-reg" accept-charset="utf-8">
                                                             <input type="text" id="cust-name" name="s" value='Customer Name' onBlur="if(this.value=='') this.value='Customer Name'" onFocus="if(this.value =='Customer Name' ) this.value=''">
-                                                            <input type="text" id="cust-email" name="s" value='Customer Email' onBlur="if(this.value=='') this.value='Customer Email'" onFocus="if(this.value =='Customer Email' ) this.value=''">
-                                                            <input type="text" id="cust-zip" name="s" value='Customer Zip Code' onBlur="if(this.value=='') this.value='Customer Zip Code'" onFocus="if(this.value =='Customer Zip Code' ) this.value=''">
+                                                            <input type="text" id="cust-email" name="s" value='Customer Email' onBlur="if(this.value=='') this.value='Customer Email'"
+                                                                onFocus="if(this.value =='Customer Email' ) this.value=''">
+                                                            <input type="text" id="cust-zip" name="s" value='Customer Zip Code' onBlur="if(this.value=='') this.value='Customer Zip Code'"
+                                                                onFocus="if(this.value =='Customer Zip Code' ) this.value=''">
                                                             <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                                                         </form>
                                                         <div class="btn-group" role="group" aria-label="...">
@@ -267,12 +297,9 @@
                                 <div class="bot1">
                                     <div class="menu_bot">
                                         <ul id="menu_bot" class="clearfix">
-                                            <li><a href="index-1.html">Home</a></li>
-                                            <!--<li><a href="index-1.html">Company</a></li>-->
-                                            <!--<li><a href="index-2.html">Services</a></li>
-                                            <li><a href="index-3.html">Products</a></li>
-                                            <li><a href="index-4.html">Solutions</a></li>
-                                            <li><a href="index-5.html">Contacts</a></li>-->
+                                            <li>
+                                                <a href="/">Home</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -293,5 +320,39 @@
 
         </div>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                var customer = {
+                    customerName: $("cust-name").val().trim(),
+                    customerEmail: $("#cust-email").val().trim(),
+                    customerZip: $("#cust-zip").val().trim()
+                };
+
+                $(document).on("submit", "#search-form", handleCustomerForm);
+
+                function handleCustomerForm(event) {
+                    event.preventDefault();
+                    console.log("it worked");
+
+                }
+
+
+                //$('submit').click(function () {
+
+                // console.log('POST FIRED!')
+
+
+                //})
+
+                $.post("/api/customer", customer, function (data) {
+
+
+                });
+            }
+        </script>
 </body>
+
 </html>
