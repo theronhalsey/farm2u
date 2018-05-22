@@ -14,17 +14,11 @@ module.exports = function (sequelize, DataTypes) {
                 isInt: true,
                 len: [5, 5]
             }
-        },
-        farmID: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
         }
     });
     Farmer.associate = function (models) {
         Farmer.hasMany(models.Product, {
-            foreignKey: "productID",
-            allowNull: false
+            onDelete: "cascade"
         });
     };
     
