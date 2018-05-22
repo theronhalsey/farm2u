@@ -9,8 +9,8 @@ module.exports = function (app) {
         Farmdb.productType.findAll({
             //console.log(req.body.prod_type)
           //  req.body.prod_type;
-        }).then(function () {
-            res.json({});
+        }).then(function (response) {
+            res.json(response);
         });
 
         res.json({});
