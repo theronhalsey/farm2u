@@ -1,9 +1,10 @@
 <div id="main">
 
+    {{!-- Header --}}
     <header>
         <div class="logo_wrapper">
             <a href="/" class="logo">
-                <img src="/assets/images/logo.png" alt="">
+                <img src="/assets/images/logo.png" alt="Logo">
             </a>
         </div>
         <div class="top1">
@@ -41,8 +42,10 @@
                 </div>
             </div>
         </div>
+
+
         <div class="top2">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="span12">
                         <div class="top2_inner">
@@ -70,35 +73,12 @@
                                                     <li>
                                                         <a href="/farmer">Register Farm / Organic Business</a>
                                                     </li>
-                                                    <!--<li class="sub-menu sub-menu-2"><a href="index-1.html">History<em></em></a>
-            <ul>
-                <li><a href="index-2.html">lorem ipsum dolor</a></li>
-                <li><a href="index-2.html">sit amet</a></li>
-                <li><a href="index-2.html">adipiscing elit</a></li>
-                <li><a href="index-2.html">nunc suscipit</a></li>
-                <li><a href="404.html">404 page not found</a></li>
-            </ul>
-        </li>-->
-                                                    <!--<li class="sub-menu sub-menu-2"><a href="index-2.html">Our team<em></em></a>
-            <ul>
-                <li><a href="index-2.html">lorem ipsum dolor</a></li>
-                <li><a href="index-2.html">sit amet</a></li>
-                <li><a href="index-2.html">adipiscing elit</a></li>
-                <li><a href="index-2.html">nunc suscipit</a></li>
-            </ul>
-        </li>-->
+
+
                                                 </ul>
                                             </li>
-                                            <!--<li class="sub-menu sub-menu-1"><a href="index-3.html">Services<em></em></a>
-                                                    <ul>
-                                                        <li><a href="index-3.html">Lorem ipsum dolor</a></li>
-                                                        <li><a href="index-3.html">Sit amet consectetue</a></li>
-                                                        <li><a href="index-3.html">Adipiscing elit</a></li>
-                                                        <li><a href="index-3.html">Nunc suscipit</a></li>
-                                                    </ul>
-                                                </li>-->
-                                            <!--<li><a href="index-4.html">Clients</a></li>
-                                                <li><a href="index-5.html">Contacts</a></li>-->
+
+
                                         </ul>
                                     </div>
                                 </div>
@@ -155,10 +135,11 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="line1"></div>
 
-                                <div class="line1"></div>
-
-                                <!--<h2>Our Team</h2>
+                        <!--<h2>Our Team</h2>
 
                                         <div class="row">
                                             <div class="span3">
@@ -236,10 +217,17 @@
 
 
                                     </div>-->
-                                <div class="span3">
+                        <div class="row">
+                            <div class="span12">
 
-                                    <h3>Search For Products</h3>
-                                    <p>Enter your zip code and product or product type to see farm markets near the zip code.</p>
+                                <h3>Search For Products</h3>
+                            </div>
+                        </div>
+                        {{!-- :rgb(207, 126, 26) --}}
+
+                        <h6>Enter your zip code and product or product type to see farm markets near the zip code.</p>
+                            <div class="row">
+                                <div class="span3">
 
                                     <div class="bot2 clearfix">
                                         <div class="search-form-wrapper clearfix">
@@ -253,17 +241,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
+                            <div class="row" id="results">
+                                <div class="span9" >
+                                    <div class="bot2 clearfix">
 
-                                    <div class="span5">
-                                        <h3 id="searchTitle"></h3>
-                                        <div id="farmDisplay">
+                                        <h3 id="searchTitle">
+                                            {{!-- --}}
+                                        </h3>
+                                        <div class="clearfix" id="farmDisplay">
 
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-
-                                    <!--<div class="thumb6">
+                            <!--<div class="thumb6">
                                             <div class="thumbnail clearfix">
                                                 <figure class=""><img src="images/company09.jpg" alt=""></figure>
                                                 <div class="caption2">
@@ -279,56 +274,40 @@
                                                 </div>
                                             </div>
                                         </div>-->
-
-
-
-
-
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
+    </div>
+</div>
+</div>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
-                        <div class="bot clearfix">
-                            <div class="bot1">
-                                <div class="menu_bot">
-                                    <ul id="menu_bot" class="clearfix">
-                                        <li>
-                                            <a href="index-1.html">Home</a>
-                                        </li>
-                                        <!--<li><a href="index-1.html">Company</a></li>-->
-                                        <!--<li><a href="index-2.html">Services</a></li>
-                                            <li><a href="index-3.html">Products</a></li>
-                                            <li><a href="index-4.html">Solutions</a></li>
-                                            <li><a href="index-5.html">Contacts</a></li>-->
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="bot2 clearfix">
-                                <div class="search-form-wrapper clearfix">
-                                    <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form">
-                                        <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
-                                        <a href="#" onClick="document.getElementById('search-form').submit()"></a>
-                                    </form>
-                                </div>
-                            </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="bot clearfix">
+                    <div class="bot1">
+                        <div class="menu_bot">
+                            <ul id="menu_bot" class="clearfix">
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="copyright">Copyright © 2018. All rights reserved.</div>
+                    </div>
+                    <div class="bot2 clearfix">
+                        <div class="search-form-wrapper clearfix">
+                            <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form">
+                                <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
+                                <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <div class="copyright">Copyright © 2018. All rights reserved.</div>
             </div>
-        </footer>
-
+        </div>
     </div>
+</footer>
+</div>
