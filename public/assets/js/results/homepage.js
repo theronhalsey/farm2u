@@ -7,6 +7,8 @@ $(document).ready(function () {
     var googleLink;
     var products;
     var schedule;
+    var infoString;
+
     $("#prod_search").on("click", function (event) {
         event.preventDefault();
 
@@ -40,10 +42,9 @@ $(document).ready(function () {
             for (var i = 0; i < results.length; i++) {
 
                  farmId = results[i].id;
-                 farmName = results[i].marketname;
-                $("<br>" + "<li>" + "Farm ID:" + farmId + "<br>" + "Farm Name:" + farmName + "<br>" + "<div id='more'> </div>" + "<br>" + "</li>").appendTo("#farmDisplay") 
+                 farmName = results[i].marketname; 
                 
-         getDetails(farmId);
+         getDetails(farmId, infoString);
                 // console.log(farmList);
             }
         });
@@ -51,7 +52,7 @@ $(document).ready(function () {
 
 
 
-    function getDetails(farmId) {
+    function getDetails(farmId, infoString) {
 
         $.ajax({
             type: "GET",
@@ -83,8 +84,7 @@ $(document).ready(function () {
             // console.log(products);
             // console.log(schedule);
             // console.log(googleLink);
-          $("<br>" + "Address:" + "<br>" + address + "<br>" + "Google Link" + "<br>"  + googleLink + "<br>" + "Products:" + products + "<br>" + "Schedule:" + schedule).appendTo("#more");
-
+            infoString = $("<br>" + "<li>" + "Farm ID:" + farmId + "<br>" + "Farm Name:" + farmName + "<br>" + "<div id='more'> </div>" + "<br>" + "</li>" + "<br>" + "Address:" + "<br>" + "<a href=" + '"' + googleLink + '"' + " target='_blank'>" + address + "</a><br>" + "Products:" + products + "<br>" + "Schedule:" + schedule).appendTo("#farmDisplay")
         });
 
     }
