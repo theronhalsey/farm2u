@@ -1,13 +1,3 @@
-'use strict';
-
-var fs        = require('fs');
-var path      = require('path');
-var Sequelize = require('sequelize');
-var basename  = path.basename(__filename);
-var env       = process.env.NODE_ENV || 'development';
-var config    = require(__dirname + '/../config/config.js')[env];
-var db        = {};
-
 module.exports = function (sequelize, DataTypes) {
     var Farmer = sequelize.define("Farmer", {
         farmName: {
@@ -24,14 +14,19 @@ module.exports = function (sequelize, DataTypes) {
                 isInt: true,
                 len: [5, 5]
             }
+        },
+        farmID: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         }
     });
     Farmer.associate = function (models) {
         Farmer.hasMany(models.Product, {
-            as: "Product",
-            foreignKey: "farmID"
+            foreignKey: "productID",
+            allowNull: false
         });
     };
-
+    
     return Farmer;
 };
