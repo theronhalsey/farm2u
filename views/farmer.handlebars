@@ -133,15 +133,13 @@
                                                                     <tbody>
                                                                         <tr>
                                                                             <td>
-                                                                                <input name="chkProd01" type="checkbox" id="chkProd01"
-                                                                                    value="Bakedgoods" class="form-check-input">
+                                                                                <input name="chkProd01" type="checkbox" id="chkProd01" value="Bakedgoods" class="form-check-input">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd01L">Baked goods</span>
                                                                             </td>
                                                                             <td>
-                                                                                <input name="chkProd02" type="checkbox" id="chkProd02"
-                                                                                    value="Cheese" class="form-check-input">
+                                                                                <input name="chkProd02" type="checkbox" id="chkProd02" value="Cheese" class="form-check-input">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd02L">Cheese and/or dairy products</span>
@@ -149,15 +147,13 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
-                                                                                <input name="chkProd05" type="checkbox" id="chkProd05"
-                                                                                    value="Eggs" class="form-check-input">
+                                                                                <input name="chkProd05" type="checkbox" id="chkProd05" value="Eggs" class="form-check-input">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd05L">Eggs</span>
                                                                             </td>
                                                                             <td>
-                                                                                <input name="chkProd06" type="checkbox" id="chkProd06"
-                                                                                    value="Seafood" class="form-check-input">
+                                                                                <input name="chkProd06" type="checkbox" id="chkProd06" value="Seafood" class="form-check-input">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd06L">Fish and/or seafood</span>
@@ -165,15 +161,13 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
-                                                                                <input name="chkProd22" type="checkbox" id="chkProd22"
-                                                                                    value="Fruits" class="box">
+                                                                                <input name="chkProd22" type="checkbox" id="chkProd22" value="Fruits" class="box">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd22L">Fresh fruits</span>
                                                                             </td>
                                                                             <td>
-                                                                                <input name="chkProd08" type="checkbox" id="chkProd08"
-                                                                                    value="Vegetables" class="form-check-input">
+                                                                                <input name="chkProd08" type="checkbox" id="chkProd08" value="Vegetables" class="form-check-input">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd08L">Fresh vegetables</span>
@@ -181,15 +175,13 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
-                                                                                <input name="chkProd12" type="checkbox" id="chkProd12"
-                                                                                    value="Meat" class="box">
+                                                                                <input name="chkProd12" type="checkbox" id="chkProd12" value="Meat" class="box">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd12L">Meat</span>
                                                                             </td>
                                                                             <td>
-                                                                                <input name="chkProd15" type="checkbox" id="chkProd15"
-                                                                                    value="Poultry" class="box">
+                                                                                <input name="chkProd15" type="checkbox" id="chkProd15" value="Poultry" class="box">
                                                                             </td>
                                                                             <td>
                                                                                 <span id="chkProd15L">Poultry</span>
@@ -212,7 +204,7 @@
 
                                     <div class="line1"></div>
 
-                                    
+
                                     <div class="span3">
                                     </div>
                                 </div>
@@ -232,7 +224,7 @@
                                     <div class="menu_bot">
                                         <ul id="menu_bot" class="clearfix">
                                             <li>
-                                                <a href="index-1.html">Home</a>
+                                                <a href="/">Home</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -253,25 +245,26 @@
             </footer>
 
         </div>
-        {{!-- <script type="text/javascript" src="js/bootstrap.js"></script> --}}
-        <script type="text/javascript" >
+        {{!--
+        <script type="text/javascript" src="js/bootstrap.js"></script> --}}
+        <script type="text/javascript">
 
-        $('').click(function(){
-            
- event.preventDefault();            
-            console.log('POST FIRED!')
+            $('submit').click(function () {
 
-
-        })
-var farm = {
-    farmId: $("#farm-name").val().trim(),
-	farmName: $("#farm-cont").val().trim(),
-    farmZip: $("#farm-zip").val().trim()
-};
-$.post("/api/farms",farm, function(data){
+                event.preventDefault();
+                console.log('POST FIRED!')
 
 
-});
+            })
+            var farm = {
+                farmId: $("#farm-name").val().trim(),
+                farmName: $("#farm-cont").val().trim(),
+                farmZip: $("#farm-zip").val().trim()
+            };
+            $.post("/api/farms", farm, function (data) {
+
+
+            });
         </script>
 </body>
 
