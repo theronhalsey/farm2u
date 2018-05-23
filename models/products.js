@@ -22,13 +22,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Product.associate = function (models) {
-        /* Product.belongsTo(models.ProductType, {
-            foreignKey: "typeID",
-            allowNull: false
-            }) */
         Product.belongsTo(models.Farmer, {
             allowNull: false
-            })
+        })
     };
 
     return Product;
