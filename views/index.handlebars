@@ -220,20 +220,20 @@
                         <div class="row">
                             <div class="span12">
 
-                                <h3>Search For Products</h3>
+                                <h3>Search For Markets</h3>
                             </div>
                         </div>
                         {{!-- :rgb(207, 126, 26) --}}
 
-                        <h6>Enter your zip code and product or product type to see farm markets near the zip code.</p>
+                        <h6>Enter your zip code to see farmers markets near the zip code.</p>
                             <div class="row">
                                 <div class="span3">
 
                                     <div class="bot2 clearfix">
                                         <div class="search-form-wrapper clearfix">
-                                            <form id="search-form" action="search.php" method="GET" accept-charset="utf-8">
+                                            <form id="search-form"  accept-charset="utf-8">
                                                 <input type="text" id="zip" name="s" value='Zip Code' onBlur="if(this.value=='') this.value='Zip Code'" onFocus="if(this.value =='Zip Code' ) this.value=''">
-                                                <input type="text" id="prod_type" name="s" value='Product Type' onBlur="if(this.value=='') this.value='Product Type'" onFocus="if(this.value =='Product Type' ) this.value=''">
+                                                
                                                 <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                                             </form>
                                             <div class="btn-group" role="group" aria-label="...">
