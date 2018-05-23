@@ -7,6 +7,13 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        productType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
         productAvailable: {
             type: DataTypes.BOOLEAN,
             default: true,
