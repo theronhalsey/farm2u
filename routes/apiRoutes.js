@@ -55,17 +55,6 @@ module.exports = function (app) {
         });
     });
 
-    //get a type by id
-    app.get("/api/productTypes/:id", function (req, res) {
-        db.ProductType.findOne({
-            where: {
-                typeID: req.params.id
-            },
-            include: [db.Product]
-        }).then(function (dbProductType) {
-            res.json(dbProductType);
-        });
-    });
 
     //get all types
     app.get("/api/productTypes/", function (req, res) {
