@@ -7,6 +7,13 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        productType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
         productAvailable: {
             type: DataTypes.BOOLEAN,
             default: true,
@@ -22,13 +29,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Product.associate = function (models) {
-        /* Product.belongsTo(models.ProductType, {
-            foreignKey: "typeID",
-            allowNull: false
-            }) */
         Product.belongsTo(models.Farmer, {
             allowNull: false
-            })
+        })
     };
 
     return Product;

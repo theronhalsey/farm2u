@@ -18,7 +18,7 @@ module.exports = function (app) {
     app.get("/api/farms/:id", function (req, res) {
         db.Farmer.findOne({
             where: {
-                farmID: req.params.id
+                ID: req.params.id
             },
             include: [db.Product]
         }).then(function (dbFarmer) {
@@ -38,7 +38,7 @@ module.exports = function (app) {
     app.get("/api/products/:id", function (req, res) {
         db.Product.findOne({
             where: {
-                productID: req.params.id
+                ID: req.params.id
             },
             include: [db.Farmer]
         }).then(function (dbProduct) {
