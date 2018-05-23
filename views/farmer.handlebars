@@ -192,7 +192,7 @@
                                     <div class="menu_bot">
                                         <ul id="menu_bot" class="clearfix">
                                             <li>
-                                                <a href="index-1.html">Home</a>
+                                                <a href="/">Home</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -216,7 +216,24 @@
         {{!--
         <script type="text/javascript" src="js/bootstrap.js"></script> --}}
         <script type="text/javascript">
-           
+
+
+            $('submit').click(function () {
+
+                event.preventDefault();
+                console.log('POST FIRED!')
+
+
+            })
+            var farm = {
+                farmId: $("#farm-name").val().trim(),
+                farmName: $("#farm-cont").val().trim(),
+                farmZip: $("#farm-zip").val().trim()
+            };
+            $.post("/api/farms", farm, function (data) {
+
+
+            });
         </script>
 </body>
 

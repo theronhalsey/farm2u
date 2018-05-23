@@ -18,7 +18,7 @@ module.exports = function (app) {
     app.get("/api/farms/:id", function (req, res) {
         db.Farmer.findOne({
             where: {
-                farmID: req.params.id
+                ID: req.params.id
             },
             include: [db.Product]
         }).then(function (dbFarmer) {
@@ -38,7 +38,7 @@ module.exports = function (app) {
     app.get("/api/products/:id", function (req, res) {
         db.Product.findOne({
             where: {
-                productID: req.params.id
+                ID: req.params.id
             },
             include: [db.Farmer]
         }).then(function (dbProduct) {
@@ -55,27 +55,6 @@ module.exports = function (app) {
         });
     });
 
-    //get a type by id
-    app.get("/api/productTypes/:id", function (req, res) {
-        db.ProductType.findOne({
-            where: {
-                typeID: req.params.id
-            },
-            include: [db.Product]
-        }).then(function (dbProductType) {
-            res.json(dbProductType);
-        });
-    });
-
-    //get all types
-    app.get("/api/productTypes/", function (req, res) {
-        db.ProductType.findAll({
-            include: [db.Product]
-        }).then(function (dbProductType) {
-            res.json(dbProductType);
-        });
-    });
-
     //post a new farm
     app.post("/api/farms", function (req, res) {
         db.Farmer.create(req.body).then(function (dbFarmer) {
@@ -89,15 +68,5 @@ module.exports = function (app) {
             res.json(dbProduct);
         });
     });
-
-    //post new type
-    app.post("/api/productTypes", function (req, res) {
-        db.ProductType.create(req.body).then(function (dbProductType) {
-            res.json(dbProductType);
-        });
-    });
-
-
-
 
 };
