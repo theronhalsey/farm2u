@@ -13,7 +13,6 @@ $(document).ready(function () {
 
         var prodSearch = {
             zip: $("#zip").val().trim(),
-            prod_type: $("#prod_type").val().trim()
         };
         //search for farmers markets using zipcode       
         zip = prodSearch.zip;
