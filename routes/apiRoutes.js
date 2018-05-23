@@ -55,6 +55,54 @@ module.exports = function (app) {
         });
     });
 
+    //get all products of a type
+    app.get("/api/product_type/:productType", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productType: req.params.productType
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
+    //get all products by name
+    app.get("/api/product_name/:productName", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productName: req.params.productName
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
+    //get all products by farm
+    app.get("/api/product_farm/:farmerID", function (req, res) {
+        db.Product.findAll({
+            where: {
+                farmerID: req.params.farmerID
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+    
+    //get all available products
+    app.get("/api/product_available/", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productAvailable: 1
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
     //post a new farm
     app.post("/api/farms", function (req, res) {
         db.Farmer.create(req.body).then(function (dbFarmer) {
