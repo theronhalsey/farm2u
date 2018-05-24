@@ -1,19 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-    app.get("/api/prod_search", function (req, res) {
-        console.log(req.body);
-
-        db.ProductType.findAll({
-            include: [db.Product]
-            //  req.body.prod_type;
-        }).then(function (dbProduct) {
-            res.json(dbProduct);
-        });
-
-        res.json({});
-    });
-
+    
     //get a farm by id
     app.get("/api/farms/:id", function (req, res) {
         db.Farmer.findOne({
@@ -85,9 +73,9 @@ module.exports = function (app) {
             where: {
                 farmerID: req.params.farmerID
             },
-            include: [db.Farmer]
-        }).then(function (dbProduct) {
-            res.json(dbProduct);
+            include: [db.Product]
+        }).then(function (dbFarmer) {
+            res.json(dbFarmer);
         });
     });
     
@@ -116,5 +104,53 @@ module.exports = function (app) {
             res.json(dbProduct);
         });
     });
+
+    // update farm
+    app.put("/api/farms", function (req, res) {
+        db.Farmer.update(
+            req.body,
+            {
+              where: {
+                id: req.body.id
+              }
+        }).then(function (dbFarmer) {
+            res.json(dbFarmer);
+        });
+    });
+
+    // update product
+    app.put("/api/products", function (req, res) {
+        db.Product.update(
+            req.body,
+            {
+              where: {
+                id: req.body.id
+              }
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
+    // delete farm
+    app.delete("/api/farms/:id", function(req, res) {
+        db.Farmer.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbFarmer) {
+          res.json(dbFarmer);
+        });
+      });
+
+      // delete product
+    app.delete("/api/products/:id", function(req, res) {
+        db.Product.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbProduct) {
+          res.json(dbProduct);
+        });
+      });
 
 };
