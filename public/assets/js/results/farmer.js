@@ -31,7 +31,7 @@ $( document ).ready(function() {
              
                 document.getElementById('productForm').reset();
                 $('#successMessage').html("Got it - Go ahead and add another product!")
-            })
+            });
     
     $.post("/api/farms", newFarm, function (data) {
 
