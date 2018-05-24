@@ -28,8 +28,8 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Product.associate = function (models) {
-        Product.belongsTo(models.Farmer, {
+    Product.associate = function (model) {
+        Product.belongsTo(model.Farmer, {
             allowNull: false
         })
     };
