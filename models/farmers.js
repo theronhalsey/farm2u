@@ -23,8 +23,8 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
     });
-    Farmer.associate = function (model) {
-        Farmer.hasMany(model.Product, {
+    Farmer.associate = function (models) {
+        Farmer.hasMany(models.Product, {
             onDelete: "cascade"
         });
     };
