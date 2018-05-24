@@ -6,8 +6,8 @@
 
 
 
-$( document ).ready(function() {
-  
+$(document).ready(function () {
+
     $('.FARMER').on("click", function (event) {
         event.preventDefault();
         var newFarm = {
@@ -16,27 +16,27 @@ $( document ).ready(function() {
             farmZip: $("#farm-zip").val().trim()
         };
 
+        $.post("/api/farms", newFarm, function (data) {
+
+        });
+
         console.log(newFarm);
     })
 
-  
+
     $('#productSubmit').on("click", function () {
-                event.preventDefault();
-                var newProduct = {
-                    productName: $("#product-name").val().trim(),
-                    productDescription: $("#product-description").val().trim(),
-                    productType: $("#product-type").val().trim()
-                };
-                console.log(newProduct);
-             
-                document.getElementById('productForm').reset();
-                $('#successMessage').html("Got it - Go ahead and add another product!")
-            })
-    
-    $.post("/api/farms", newFarm, function (data) {
+        event.preventDefault();
+        var newProduct = {
+            productName: $("#product-name").val().trim(),
+            productDescription: $("#product-description").val().trim(),
+            productType: $("#product-type").val().trim(),
+            productAvailable: 1
+        };
+        console.log(newProduct);
+        $.post("/api/products", newProduct, function (data) {
 
-                });
-    $.post("/api/products", newProduct, function (data) {
-
+        });
+        document.getElementById('productForm').reset();
+        $('#successMessage').html("Got it - Go ahead and add another product!")
     });
 });
