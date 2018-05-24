@@ -36,6 +36,7 @@ module.exports = function (app) {
 
     //get all products
     app.get("/api/products/", function (req, res) {
+        console.log('hello');
         db.Product.findAll({
             include: [db.Farmer]
         }).then(function (dbProduct) {
@@ -45,13 +46,16 @@ module.exports = function (app) {
 
     //get all products of a type
     app.get("/api/product_type/:productType", function (req, res) {
+        console.log("this is what the front end sends the api " + req.params);
+        console.log('hello');
         db.Product.findAll({
             where: {
-                productType: req.params.productType
+                productType: req.params
             },
             include: [db.Farmer]
         }).then(function (dbProduct) {
             res.json(dbProduct);
+            console.log("this is the return of the api " + dbProduct)
         });
     });
 
@@ -101,6 +105,7 @@ module.exports = function (app) {
     //post new product
     app.post("/api/products", function (req, res) {
         db.Product.create(req.body).then(function (dbProduct) {
+            console.log(req.body);
             res.json(dbProduct);
         });
     });

@@ -69,4 +69,14 @@ $(document).ready(function () {
             infoString = $("<h2><li>" + farmName + "</h2>" + "Market ID: " + farmId + "Address: " + "<br>" + "<a href=" + '"' + googleLink + '"' + " target='_blank'>" + address + "</a><br>" + "Products: " + products + "<br>" + "Schedule: " + schedule + "</li>").appendTo("#farmDisplay")
         });
     }
+
+    $("#prod_type_search").on("click", function (event) {
+        let productTypeSearch = {
+            productType: $("#product-type").val().trim()
+        }
+        console.log(productTypeSearch);
+        $.get("/api/product_type/" + productTypeSearch.productType, function (data) {
+            console.log(data);
+        });
+    });
 });
