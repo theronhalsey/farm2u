@@ -21,17 +21,17 @@
                                         <ul class="social clearfix">
                                             <li>
                                                 <a href="#">
-                                                    <img src="images/social_ic1.png">
+                                                    <img src="/assets/images/social_ic1.png">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img src="images/social_ic2.png">
+                                                    <img src="/assets/images/social_ic2.png">
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <img src="images/social_ic3.png">
+                                                    <img src="/assets/images/social_ic3.png">
                                                 </a>
                                             </li>
                                         </ul>
@@ -86,7 +86,7 @@
 
         <div id="slider" class="clearfix">
             <div id="camera_wrap">
-                <div data-src="images/slide1.jpg"></div>
+                <div data-src="/assets/images/slide1.jpg"></div>
             </div>
         </div>
 
@@ -113,7 +113,7 @@
                                     <div class="thumb3">
                                         <div class="thumbnail clearfix">
                                             <figure class="img-polaroid">
-                                                <img src="images/company01.jpg" alt="">
+                                                <img src="/assets/images/company01.jpg" alt="">
                                             </figure>
                                             <div class="caption">
                                                 <h4>
@@ -121,80 +121,48 @@
                                                 </h4>
                                                 <div class="bot2 clearfix">
                                                     <div class="search-form-wrapper clearfix">
-                                                        <form id="farm-reg" action="search.php" method="GET" accept-charset="utf-8">
+                                                        <form id="farm-reg" accept-charset="utf-8">
+                                                            <h2>Farm Details</h2>
                                                             <input type="text" id="farm-name" name="s" value='Farm Name' onBlur="if(this.value=='') this.value='Farm Name'" onFocus="if(this.value =='Farm Name' ) this.value=''">
                                                             <input type="text" id="farm-cont" name="s" value='Farm Contact' onBlur="if(this.value=='') this.value='Farm Contact'" onFocus="if(this.value =='Farm Contact' ) this.value=''">
                                                             <input type="text" id="farm-zip" name="s" value='Farm Zip Code' onBlur="if(this.value=='') this.value='Farm Zip Code'" onFocus="if(this.value =='Farm Zip Code' ) this.value=''">
-                                                            <p>Select product types available below</p>
-
-                                                            <div id="CheckBoxes1" style="text-align:left;">
-                                                                <table border="0" style="width:705px;">
-
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <input name="chkProd01" type="checkbox" id="chkProd01" value="Bakedgoods" class="form-check-input">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd01L">Baked goods</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <input name="chkProd02" type="checkbox" id="chkProd02" value="Cheese" class="form-check-input">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd02L">Cheese and/or dairy products</span>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <input name="chkProd05" type="checkbox" id="chkProd05" value="Eggs" class="form-check-input">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd05L">Eggs</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <input name="chkProd06" type="checkbox" id="chkProd06" value="Seafood" class="form-check-input">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd06L">Fish and/or seafood</span>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <input name="chkProd22" type="checkbox" id="chkProd22" value="Fruits" class="box">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd22L">Fresh fruits</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <input name="chkProd08" type="checkbox" id="chkProd08" value="Vegetables" class="form-check-input">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd08L">Fresh vegetables</span>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <input name="chkProd12" type="checkbox" id="chkProd12" value="Meat" class="box">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd12L">Meat</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <input name="chkProd15" type="checkbox" id="chkProd15" value="Poultry" class="box">
-                                                                            </td>
-                                                                            <td>
-                                                                                <span id="chkProd15L">Poultry</span>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-
-                                                            <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                                                         </form>
                                                         <div class="btn-group" role="group" aria-label="...">
-                                                            <button id="submit" type="button" class="btn btn-success">Submit</button>
+                                                            <button id="farmerSubmit" type="button" class="btn btn-success FARMER">Create Farm</button>
+                                                        </div>
+
+                                                        <br/>
+                                                        <br/>
+                                                        <br/>
+                                                        <br/>
+                                                        <form id="productForm">
+                                                            <h2>Product Details</h2>
+                                                            <input type="text" id="product-name" name="s" value='Product Name' onBlur="if(this.value=='') this.value='Product Name'"
+                                                                onFocus="if(this.value =='Product Name' ) this.value=''">
+                                                            <input type="text" id="product-description" name="s" value='Product Description' onBlur="if(this.value=='') this.value='Product Description'"
+                                                                onFocus="if(this.value =='Product Description' ) this.value=''">
+
+
+                                                            <div>
+
+                                                                <select id="product-type">
+                                                                    <option value="">Select Product Category</option>
+                                                                    <option value="Pastries">Baked Goods</option>
+                                                                    <option value="Dairy">Cheese and/or dairy products</option>
+                                                                    <option value="Eggs">Eggs</option>
+                                                                    <option value="Seafood">Fish and/or seafood</option>
+                                                                    <option value="Fruit">Fresh fruits</option>
+                                                                    <option value="Vegetables">Fresh vegetables</option>
+                                                                    <option value="Meat">Meat</option>
+                                                                    <option value="Poultry">Poultry</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </form>
+                                                        <h3 id="successMessage"></h3>
+
+                                                        <div class="btn-group" role="group" aria-label="...">
+                                                            <button id="productSubmit" type="button" class="btn btn-success">Add Product</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -248,6 +216,7 @@
         {{!--
         <script type="text/javascript" src="js/bootstrap.js"></script> --}}
         <script type="text/javascript">
+
 
             $('submit').click(function () {
 
