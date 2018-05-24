@@ -1,19 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-    app.get("/api/prod_search", function (req, res) {
-        console.log(req.body);
-
-        db.ProductType.findAll({
-            include: [db.Product]
-            //  req.body.prod_type;
-        }).then(function (dbProduct) {
-            res.json(dbProduct);
-        });
-
-        res.json({});
-    });
-
+    
     //get a farm by id
     app.get("/api/farms/:id", function (req, res) {
         db.Farmer.findOne({
@@ -55,6 +43,54 @@ module.exports = function (app) {
         });
     });
 
+    //get all products of a type
+    app.get("/api/product_type/:productType", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productType: req.params.productType
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
+    //get all products by name
+    app.get("/api/product_name/:productName", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productName: req.params.productName
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
+    //get all products by farm
+    app.get("/api/product_farm/:farmerID", function (req, res) {
+        db.Product.findAll({
+            where: {
+                farmerID: req.params.farmerID
+            },
+            include: [db.Product]
+        }).then(function (dbFarmer) {
+            res.json(dbFarmer);
+        });
+    });
+    
+    //get all available products
+    app.get("/api/product_available/", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productAvailable: 1
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
     //post a new farm
     app.post("/api/farms", function (req, res) {
         db.Farmer.create(req.body).then(function (dbFarmer) {
@@ -68,5 +104,53 @@ module.exports = function (app) {
             res.json(dbProduct);
         });
     });
+
+    // update farm
+    app.put("/api/farms", function (req, res) {
+        db.Farmer.update(
+            req.body,
+            {
+              where: {
+                id: req.body.id
+              }
+        }).then(function (dbFarmer) {
+            res.json(dbFarmer);
+        });
+    });
+
+    // update product
+    app.put("/api/products", function (req, res) {
+        db.Product.update(
+            req.body,
+            {
+              where: {
+                id: req.body.id
+              }
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
+
+    // delete farm
+    app.delete("/api/farms/:id", function(req, res) {
+        db.Farmer.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbFarmer) {
+          res.json(dbFarmer);
+        });
+      });
+
+      // delete product
+    app.delete("/api/products/:id", function(req, res) {
+        db.Product.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbProduct) {
+          res.json(dbProduct);
+        });
+      });
 
 };
