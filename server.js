@@ -29,6 +29,7 @@ require("./routes/apiRoutes")(app);
 //app.use('/', routes);
 
 // Start our server so that it can begin listening to client requests.
+<<<<<<< HEAD
 //app.listen(PORT, function() {
 //    // Log (server-side) when our server has started
 //  console.log("Server listening on: http://localhost:" + PORT);
@@ -39,3 +40,15 @@ require("./routes/apiRoutes")(app);
     console.log("App listening on PORT " + PORT);
   });
 }); 
+=======
+/* app.listen(PORT, function() {
+    // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
+}); 
+ */
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});
+>>>>>>> f8f21f0f5653434f2b0d704c6bf535e8fe80a293
