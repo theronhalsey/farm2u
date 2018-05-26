@@ -71,12 +71,21 @@ $(document).ready(function () {
     }
 
     $("#prod_type_search").on("click", function (event) {
-        let productTypeSearch = {
-            productType: $("#product-type").val().trim()
-        }
-        console.log(productTypeSearch);
-        $.get("/api/product_type/" + productTypeSearch.productType, function (data) {
+        let productType = $("#product-type").val().trim()
+        console.log(productType);
+        $.get("/api/product_type/" + productType, function (data) {
             console.log(data);
+        }).then(function (data) {
+            $("<div class='line1'></div>").appendTo("results");
+            $("<h3>" + "List of farms with " + productType + " near your location:" + "<h3>").appendTo("#searchTitle");
+            for (i = 0; i < data.length; i++) {
+                farmName = data[i].Farmer.farmName;
+                farmContact = data[i].Farmer.farmContact;
+                farmZip = data[i].Farmer.farmZip;
+                productName = data[i].productName;
+                productDescription = data[i].productDescription;
+                infoString = $("<h2><li>" + farmName + "</h2>" + "Farm Contact: " + farmContact + "<br>" + "Zip Code: " + farmZip + "<br>" + "Product: " + productName + "<br>" + "Description: " + productDescription + "</li>").appendTo("#farmDisplay")
+            }
         });
     });
 });
