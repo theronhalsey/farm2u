@@ -1,11 +1,3 @@
-// var farm = {
-//     farmId: $("#").val().trim(),
-// 	farmName: $("#").val().trim(),
-//     farmZip: $("#zip").val().trim()
-// };
-
-
-
 $(document).ready(function () {
 
     $.getScript("assets/js/results/apiCalls.js", function (data) {
@@ -16,7 +8,12 @@ $(document).ready(function () {
         postNewFarm = function (farm) {
             $.post("/api/farms", farm, function (data) {
                 farmKey = data.id
-                console.log(data);
+            }).then(function (response) {
+                console.log(response);
+                $('#farm-reg').replaceWith("<h2>" + response.farmName + " sucessfully added to the registry!</h2><br><h3>Now start adding some products below...</h3>");
+                $('#farmerSubmit').remove();
+                $('#productForm').removeClass('hidden');
+                $('#productSubmit').removeClass('hidden');
             });
         };
 

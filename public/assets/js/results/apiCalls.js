@@ -19,8 +19,8 @@ searchByProductType = function () {
 // makes a post API call to add new product to the database
 postNewProduct = function (product) {
     $.post("/api/products", product, function (data) {
-        console.log(product);
         console.log(data);
+        $("<h2><li>" + data.productName + "</h2>" + "Product Type: " + data.productType + "<br>" + "Description: " + data.productDescription + "</li>").prependTo("#inventory")
     });
     document.getElementById('productForm').reset();
     $('#successMessage').html("Got it - Go ahead and add another product!")
