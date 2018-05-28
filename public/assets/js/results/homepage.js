@@ -12,6 +12,8 @@ $(document).ready(function () {
 
         $("#prod_search").on("click", function (event) {
             event.preventDefault();
+            $('#farmDisplay').empty();
+            $('#searchTitle').empty();
 
             var prodSearch = {
                 zip: $("#zip").val().trim(),
@@ -75,6 +77,8 @@ $(document).ready(function () {
         $("#prod_type_search").on("click", function (event) {
             let productType = $("#product-type").val().trim()
             event.preventDefault();
+            $('#farmDisplay').empty();
+            $('#searchTitle').empty();
             searchByProductType(productType);
         });
 
