@@ -24,7 +24,6 @@ module.exports = function (app) {
 
     //get a product by id
     app.get("/api/product_id/:id", function (req, res) {
-        console.log("I have been called")
         db.Product.findOne({
             where: {
                 ID: req.params.id
@@ -37,7 +36,6 @@ module.exports = function (app) {
 
     //get all product by name
     app.get("/api/product_name/:name", function (req, res) {
-        console.log("I have been called")
         db.Product.findAll({
             where: {
                 productName: req.params.name

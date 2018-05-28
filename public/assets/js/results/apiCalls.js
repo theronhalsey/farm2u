@@ -18,7 +18,6 @@ searchByProductType = function (productType) {
 //makes an API call to search for a product by name
 searchByProductName = function (productName) {
     $.get("/api/product_name/" + productName, function (data) {
-        console.log(data)
     }).then(function (data) {
         $("<div class='line1'></div>").appendTo("results");
         $("<h3>" + "List of farms with " + productName + " near your location:" + "<h3>").appendTo("#searchTitle");
@@ -51,7 +50,6 @@ dropDownProductTypes = function () {
         for (i = 0; i < data.length; i++) {
             if (!productTypes.includes(data[i].productType)) {
                 productTypes.push(data[i].productType)
-                console.log(productTypes)
             }
             productTypes.sort();
         }
@@ -70,7 +68,6 @@ dropDownProducts = function () {
         for (i = 0; i < data.length; i++) {
             if (!productList.includes(data[i].productName)) {
                 productList.push(data[i].productName)
-                console.log(productList)
             }
             productList.sort();
         }

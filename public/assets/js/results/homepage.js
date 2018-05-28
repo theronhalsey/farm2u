@@ -86,7 +86,6 @@ $(document).ready(function () {
         });
 
         $("#prod_name_search").on("click", function (event) {
-            console.log("I have been clicked")
             let productName = $("#product-list").val().trim()
             event.preventDefault();
             $('#farmDisplay').empty();
