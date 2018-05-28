@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-    $.getScript("assets/js/results/search.js", function (data) {
-        console.log("Search object loaded.");
+    $.getScript("assets/js/results/apiCalls.js", function (data) {
 
         var farmList;
         var farmId;
@@ -74,7 +73,9 @@ $(document).ready(function () {
         }
 
         $("#prod_type_search").on("click", function (event) {
-            searchByProductType();
+            let productType = $("#product-type").val().trim()
+            event.preventDefault();
+            searchByProductType(productType);
         });
 
     });
