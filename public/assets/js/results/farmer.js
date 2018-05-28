@@ -8,35 +8,38 @@
 
 $(document).ready(function () {
 
-    $('.FARMER').on("click", function (event) {
-        event.preventDefault();
-        var newFarm = {
-            farmName: $("#farm-name").val().trim(),
-            farmContact: $("#farm-cont").val().trim(),
-            farmZip: $("#farm-zip").val().trim()
+    $.getScript("assets/js/results/apiCalls.js", function (data) {
+
+        let farmKey;
+
+        // makes a post API call to add a new farm to the database
+        postNewFarm = function (farm) {
+            $.post("/api/farms", farm, function (data) {
+                farmKey = data.id
+                console.log(data);
+            });
         };
 
-        $.post("/api/farms", newFarm, function (data) {
-
+        $('.FARMER').on("click", function (event) {
+            event.preventDefault();
+            var newFarm = {
+                farmName: $("#farm-name").val().trim(),
+                farmContact: $("#farm-cont").val().trim(),
+                farmZip: $("#farm-zip").val().trim()
+            };
+            postNewFarm(newFarm)
         });
 
-        console.log(newFarm);
-    })
-
-
-    $('#productSubmit').on("click", function () {
-        event.preventDefault();
-        var newProduct = {
-            productName: $("#product-name").val().trim(),
-            productDescription: $("#product-description").val().trim(),
-            productType: $("#product-type").val().trim(),
-            productAvailable: 1
-        };
-        console.log(newProduct);
-        $.post("/api/products", newProduct, function (data) {
-
+        $('#productSubmit').on("click", function () {
+            var newProduct = {
+                productName: $("#product-name").val().trim(),
+                productDescription: $("#product-description").val().trim(),
+                productType: $("#product-type").val().trim(),
+                productAvailable: 1,
+                FarmerId: farmKey
+            };
+            event.preventDefault();
+            postNewProduct(newProduct);
         });
-        document.getElementById('productForm').reset();
-        $('#successMessage').html("Got it - Go ahead and add another product!")
     });
 });

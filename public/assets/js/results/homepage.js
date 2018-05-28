@@ -1,91 +1,82 @@
 $(document).ready(function () {
 
-    var farmList;
-    var farmId;
-    var address;
-    var googleLink;
-    var products;
-    var schedule;
-    var infoString;
+    $.getScript("assets/js/results/apiCalls.js", function (data) {
 
-    $("#prod_search").on("click", function (event) {
-        event.preventDefault();
+        var farmList;
+        var farmId;
+        var address;
+        var googleLink;
+        var products;
+        var schedule;
+        var infoString;
 
-        var prodSearch = {
-            zip: $("#zip").val().trim(),
-        };
-        //search for farmers markets using zipcode       
-        zip = prodSearch.zip;
+        $("#prod_search").on("click", function (event) {
+            event.preventDefault();
 
-        $("<div class='line1'></div>").appendTo("results");
-        $("<h3>" + "List of farms near your location:" + "<h3>").appendTo("#searchTitle");
+            var prodSearch = {
+                zip: $("#zip").val().trim(),
+            };
+            //search for farmers markets using zipcode       
+            zip = prodSearch.zip;
 
-        $.ajax({
-            type: "GET",
-            contentType: "application/json; charset=utf-8",
-            url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip,
-            dataType: 'jsonp'
-        }).then(function (response) {
-            var results;
-            for (var key in response) {
-                results = response[key];
-                for (var i = 0; i < results.length; i++) {
-                    var result = results[i];
-                    for (var key in result) {
-                        if (i == 0) { }
-                    }
-                }
-            }
-            for (var i = 0; i < results.length; i++) {
-                farmId = results[i].id;
-                farmName = results[i].marketname;
-                getDetails(farmId, farmName);
-            }
-        });
-    });
-
-    function getDetails(farmId, farmName) {
-        // uses the information from the market search to run a detailed search on the returned markets
-        $.ajax({
-            type: "GET",
-            contentType: "application/json; charset=utf-8",
-            url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + farmId,
-            dataType: 'jsonp',
-        }).then(function (response) {
-            var marketdetail;
-            for (var key in response) {
-                marketdetail = response[key];
-                for (var i = 0; i < marketdetail.length; i++) {
-                    marketdetail = marketdetail[i];
-                    for (var key in marketdetail) {
-                        if (i == 0) { }
-                    }
-                }
-            }
-            address = marketdetail.Address;
-            googleLink = marketdetail.GoogleLink;
-            products = marketdetail.Products;
-            schedule = marketdetail.Schedule;
-            infoString = $("<h2><li>" + farmName + "</h2>" + "Market ID: " + farmId + "Address: " + "<br>" + "<a href=" + '"' + googleLink + '"' + " target='_blank'>" + address + "</a><br>" + "Products: " + products + "<br>" + "Schedule: " + schedule + "</li>").appendTo("#farmDisplay")
-        });
-    }
-
-    $("#prod_type_search").on("click", function (event) {
-        let productType = $("#product-type").val().trim()
-        console.log(productType);
-        $.get("/api/product_type/" + productType, function (data) {
-            console.log(data);
-        }).then(function (data) {
             $("<div class='line1'></div>").appendTo("results");
-            $("<h3>" + "List of farms with " + productType + " near your location:" + "<h3>").appendTo("#searchTitle");
-            for (i = 0; i < data.length; i++) {
-                farmName = data[i].Farmer.farmName;
-                farmContact = data[i].Farmer.farmContact;
-                farmZip = data[i].Farmer.farmZip;
-                productName = data[i].productName;
-                productDescription = data[i].productDescription;
-                infoString = $("<h2><li>" + farmName + "</h2>" + "Farm Contact: " + farmContact + "<br>" + "Zip Code: " + farmZip + "<br>" + "Product: " + productName + "<br>" + "Description: " + productDescription + "</li>").appendTo("#farmDisplay")
-            }
+            $("<h3>" + "List of farms near your location:" + "<h3>").appendTo("#searchTitle");
+
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip,
+                dataType: 'jsonp'
+            }).then(function (response) {
+                var results;
+                for (var key in response) {
+                    results = response[key];
+                    for (var i = 0; i < results.length; i++) {
+                        var result = results[i];
+                        for (var key in result) {
+                            if (i == 0) { }
+                        }
+                    }
+                }
+                for (var i = 0; i < results.length; i++) {
+                    farmId = results[i].id;
+                    farmName = results[i].marketname;
+                    getDetails(farmId, farmName);
+                }
+            });
         });
+
+        function getDetails(farmId, farmName) {
+            // uses the information from the market search to run a detailed search on the returned markets
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + farmId,
+                dataType: 'jsonp',
+            }).then(function (response) {
+                var marketdetail;
+                for (var key in response) {
+                    marketdetail = response[key];
+                    for (var i = 0; i < marketdetail.length; i++) {
+                        marketdetail = marketdetail[i];
+                        for (var key in marketdetail) {
+                            if (i == 0) { }
+                        }
+                    }
+                }
+                address = marketdetail.Address;
+                googleLink = marketdetail.GoogleLink;
+                products = marketdetail.Products;
+                schedule = marketdetail.Schedule;
+                infoString = $("<h2><li>" + farmName + "</h2>" + "Market ID: " + farmId + "Address: " + "<br>" + "<a href=" + '"' + googleLink + '"' + " target='_blank'>" + address + "</a><br>" + "Products: " + products + "<br>" + "Schedule: " + schedule + "</li>").appendTo("#farmDisplay")
+            });
+        }
+
+        $("#prod_type_search").on("click", function (event) {
+            let productType = $("#product-type").val().trim()
+            event.preventDefault();
+            searchByProductType(productType);
+        });
+
     });
 });

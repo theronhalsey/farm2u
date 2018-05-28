@@ -101,6 +101,7 @@ module.exports = function (app) {
     //post new product
     app.post("/api/products", function (req, res) {
         db.Product.create(req.body).then(function (dbProduct) {
+            console.log(req.body)
             res.json(dbProduct);
         });
     });
