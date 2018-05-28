@@ -10,6 +10,9 @@ $(document).ready(function () {
         var schedule;
         var infoString;
 
+        dropDownProductTypes();
+        dropDownProducts();
+
         $("#prod_search").on("click", function (event) {
             event.preventDefault();
             $('#farmDisplay').empty();
@@ -80,6 +83,14 @@ $(document).ready(function () {
             $('#farmDisplay').empty();
             $('#searchTitle').empty();
             searchByProductType(productType);
+        });
+
+        $("#prod_name_search").on("click", function (event) {
+            let productName = $("#product-list").val().trim()
+            event.preventDefault();
+            $('#farmDisplay').empty();
+            $('#searchTitle').empty();
+            searchByProductName(productName);
         });
 
     });

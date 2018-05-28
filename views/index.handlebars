@@ -2,20 +2,38 @@
 
     {{!-- Header --}}
     <header>
-        <div class="logo_wrapper"><a href="/" class="logo"><img src="/assets/images/logo.png" alt=""></a></div>
+        <div class="logo_wrapper">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo.png" alt="">
+            </a>
+        </div>
         <div class="top1">
             <div class="container">
                 <div class="row">
                     <div class="span12">
                         <div class="top1_inner clearfix">
-                            <div class="phone1">Need Help? Call us: <span>1.123.456.7890</span></div>
+                            <div class="phone1">Need Help? Call us:
+                                <span>1.123.456.7890</span>
+                            </div>
                             <div class="phone2 clearfix">
                                 <div class="txt1">Follow us:</div>
                                 <div class="social_wrapper">
                                     <ul class="social clearfix">
-                                        <li><a href="#"><img src="/assets/images/social_ic1.png"></a></li>
-                                        <li><a href="#"><img src="/assets/images/social_ic2.png"></a></li>
-                                        <li><a href="#"><img src="/assets/images/social_ic3.png"></a></li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/assets/images/social_ic1.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/assets/images/social_ic2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/assets/images/social_ic3.png">
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -39,12 +57,20 @@
                                     </a>
                                     <div class="nav-collapse nav-collapse_ collapse">
                                         <ul class="nav sf-menu clearfix">
-                                            <li><a href="/">Home</a></li>
+                                            <li>
+                                                <a href="/">Home</a>
+                                            </li>
                                             <li class="sub-menu sub-menu-1">
-                                                <a href="#">Join Us<em></em></a>
+                                                <a href="#">Join Us
+                                                    <em></em>
+                                                </a>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="/customer">Create Customer Account</a></li>
-                                                    <li><a href="/farmer">Register Farm / Organic Business</a></li>
+                                                    <li>
+                                                        <a href="/customer">Create Customer Account</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/farmer">Register Farm / Organic Business</a>
+                                                    </li>
                                                 </ul>
                                     </div>
                                 </div>
@@ -55,11 +81,6 @@
             </div>
         </div>
     </header>
-    <div id="slider" class="clearfix">
-        <div id="camera_wrap">
-            <img src="/assets/images/slide1.jpg"></img>
-        </div>
-    </div>
 
     <div id="content">
         <div id="content2">
@@ -114,100 +135,100 @@
 
 
                         <div class="row">
-                            <div class="span3">
+                            <div class="span4">
 
                                 <div class="bot2 clearfix">
-                                    <h6>Enter your zip code to see farmers markets near the zip code.</h6>
-                                        <div class="search-form-wrapper clearfix">
-                                            <form id="search-form" accept-charset="utf-8">
-                                                <input type="text" id="zip" name="s" value='Zip Code' onBlur="if(this.value=='') this.value='Zip Code'" onFocus="if(this.value =='Zip Code' ) this.value=''">
+                                    <h6>Search Farmers Markets by zip code.</h6>
+                                    <div class="search-form-wrapper clearfix">
+                                        <form id="search-form" accept-charset="utf-8">
+                                            <input type="text" id="zip" name="s" value='Zip Code' onBlur="if(this.value=='') this.value='Zip Code'" onFocus="if(this.value =='Zip Code' ) this.value=''">
 
-                                                <a href="#" onClick="document.getElementById('search-form').submit()"></a>
-                                            </form>
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-success" id="prod_search">Search</button>
-                                            </div>
+                                            <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                                        </form>
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-success" id="prod_search">Search</button>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="span6">
+                            <div class="span4">
                                 <div class="bot2 clearfix">
                                     <h6>Select the food type you want to find.</h6>
-                                        <div class="search-form-wrapper clearfix">
-                                            <form id="type-search-form" accept-charset="utf-8">
-                                                <div>
-
-                                                    <select id="product-type">
-                                                        <option value="">Select Product Category</option>
-                                                        <option value="Pastries">Baked Goods</option>
-                                                        <option value="Dairy">Cheese and/or dairy products</option>
-                                                        <option value="Seafood">Fish and/or seafood</option>
-                                                        <option value="Fruit">Fresh fruits</option>
-                                                        <option value="Vegetables">Fresh vegetables</option>
-                                                        <option value="Meat">Meat</option>
-                                                        <option value="Poultry">Poultry</option>
-                                                    </select>
-                                                </div>
-                                            </form>
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-success" id="prod_type_search">Search</button>
+                                    <div class="search-form-wrapper clearfix">
+                                        <form id="type-search-form" accept-charset="utf-8">
+                                            <div>
+                                                <select id="product-type"></select>
                                             </div>
+                                        </form>
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-success" id="prod_type_search">Search</button>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="span9">
+
+                            <div class="span4">
                                 <div class="bot2 clearfix">
-                                </div>
-                            </div>
-
-                            <div class="row" id="results">
-                                <div class="span9">
-                                    <div class="bot2 clearfix">
-
-                                        <h3 id="searchTitle">
-                                            {{!-- --}}
-                                        </h3>
-                                        <div class="clearfix" id="farmDisplay">
-
+                                    <h6>Select the product you're looking for.</h6>
+                                    <div class="search-form-wrapper clearfix">
+                                        <form id="product-search-form" accept-charset="utf-8">
+                                            <div>
+                                                <select id="product-list"></select>
+                                            </div>
+                                        </form>
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-success" id="prod_name_search">Search</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="span12">
-                <div class="bot clearfix">
-                    <div class="bot1">
-                        <div class="menu_bot">
-                            <ul id="menu_bot" class="clearfix">
-                                <li>
-                                    <a href="/">Home</a>
-                                </li>
-                            </ul>
+                        <div class="row" id="results">
+                            <div class="span9">
+                                <div class="bot2 clearfix">
+
+                                    <h3 id="searchTitle">
+                                        {{!-- --}}
+                                    </h3>
+                                    <div class="clearfix" id="farmDisplay"></div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bot2 clearfix">
-                        <div class="search-form-wrapper clearfix">
-                            <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form">
-                                <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
-                                <a href="#" onClick="document.getElementById('search-form').submit()"></a>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
-                <div class="copyright">Copyright © 2018. All rights reserved.</div>
             </div>
         </div>
     </div>
-</footer>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="bot clearfix">
+                        <div class="bot1">
+                            <div class="menu_bot">
+                                <ul id="menu_bot" class="clearfix">
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bot2 clearfix">
+                            <div class="search-form-wrapper clearfix">
+                                <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form">
+                                    <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
+                                    <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright">Copyright © 2018. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
