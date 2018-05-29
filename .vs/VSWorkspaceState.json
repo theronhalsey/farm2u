@@ -8,9 +8,9 @@
     "\\public",
     "\\public\\assets",
     "\\public\\assets\\js",
-    "\\public\\assets\\js\\results",
-    "\\routes"
+    "\\views",
+    "\\views\\layouts"
   ],
-  "SelectedNode": "\\routes\\apiRoutes.js",
+  "SelectedNode": "\\views\\layouts\\main.handlebars",
   "PreviewInSolutionExplorer": false
 }
