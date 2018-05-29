@@ -2,20 +2,38 @@
     <div id="main">
 
         <header>
-            <div class="logo_wrapper"><a href="/" class="logo"><img src="/assets/images/logo.png" alt=""></a></div>
+            <div class="logo_wrapper">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.png" alt="">
+                </a>
+            </div>
             <div class="top1">
                 <div class="container">
                     <div class="row">
                         <div class="span12">
                             <div class="top1_inner clearfix">
-                                <div class="phone1">Need Help? Call us: <span>1.123.456.7890</span></div>
+                                <div class="phone1">Need Help? Call us:
+                                    <span>1.123.456.7890</span>
+                                </div>
                                 <div class="phone2 clearfix">
                                     <div class="txt1">Follow us:</div>
                                     <div class="social_wrapper">
                                         <ul class="social clearfix">
-                                            <li><a href="#"><img src="/assets/images/social_ic1.png"></a></li>
-                                            <li><a href="#"><img src="/assets/images/social_ic2.png"></a></li>
-                                            <li><a href="#"><img src="/assets/images/social_ic3.png"></a></li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="/assets/images/social_ic1.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="/assets/images/social_ic2.png">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img src="/assets/images/social_ic3.png">
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -39,9 +57,13 @@
                                         </a>
                                         <div class="nav-collapse nav-collapse_ collapse">
                                             <ul class="nav sf-menu clearfix">
-                                                <li><a href="/">Home</a></li>
+                                                <li>
+                                                    <a href="/">Home</a>
+                                                </li>
                                                 <li class="sub-menu sub-menu-1">
-                                                    <a href="#">Join Us<em></em></a>
+                                                    <a href="#">Join Us
+                                                        <em></em>
+                                                    </a>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li><a href="/customer">Create Customer Account</a></li>
                                                         <li><a href="/farmer">Register Farm / Organic Business</a></li>
@@ -108,26 +130,16 @@
                                                         <br/>
                                                         <br/>
                                                         <br/>
-                                                        <form id="productForm">
+                                                        <form id="productForm" class="hidden">
                                                             <h2>Product Details</h2>
                                                             <input type="text" id="product-name" name="s" value='Product Name' onBlur="if(this.value=='') this.value='Product Name'"
                                                                 onFocus="if(this.value =='Product Name' ) this.value=''">
                                                             <input type="text" id="product-description" name="s" value='Product Description' onBlur="if(this.value=='') this.value='Product Description'"
                                                                 onFocus="if(this.value =='Product Description' ) this.value=''">
-
-
                                                             <div>
-
                                                                 <select id="product-type">
                                                                     <option value="">Select Product Category</option>
-                                                                    <option value="Pastries">Baked Goods</option>
-                                                                    <option value="Dairy">Cheese and/or dairy products</option>
-                                                                    <option value="Eggs">Eggs</option>
-                                                                    <option value="Seafood">Fish and/or seafood</option>
-                                                                    <option value="Fruit">Fresh fruits</option>
-                                                                    <option value="Vegetables">Fresh vegetables</option>
-                                                                    <option value="Meat">Meat</option>
-                                                                    <option value="Poultry">Poultry</option>
+                                                                    <option value="new">New Product Type</option>
                                                                 </select>
                                                             </div>
 
@@ -135,8 +147,11 @@
                                                         <h3 id="successMessage"></h3>
 
                                                         <div class="btn-group" role="group" aria-label="...">
-                                                            <button id="productSubmit" type="button" class="btn btn-success">Add Product</button>
+                                                            <button id="productSubmit" type="button" class="btn btn-success hidden">Add Product</button>
                                                         </div>
+                                                    </div>
+                                                    <div class="clearfix" id="inventory">
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -186,28 +201,6 @@
             </footer>
 
         </div>
-        {{!--
-        <script type="text/javascript" src="js/bootstrap.js"></script> --}}
-        <script type="text/javascript">
-
-
-            $('submit').click(function () {
-
-                event.preventDefault();
-                console.log('POST FIRED!')
-
-
-            })
-            var farm = {
-                farmId: $("#farm-name").val().trim(),
-                farmName: $("#farm-cont").val().trim(),
-                farmZip: $("#farm-zip").val().trim()
-            };
-            $.post("/api/farms", farm, function (data) {
-
-
-            });
-        </script>
 </body>
 
 </html>
