@@ -152,6 +152,9 @@ module.exports = function (app) {
         }).then(function(dbProduct) {
           res.json(dbProduct);
         });
-      });
+    });
+
+    // process the signup form
+    // app.post('api/farmer-signup', do all our passport stuff here);
 
 };
