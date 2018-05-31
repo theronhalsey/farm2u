@@ -8,8 +8,8 @@ module.exports = function (passport, user) {
 
     passport.use('local-signup', new LocalStrategy(
         {
-            usernameField: 'farmEmail',
-            passwordField: 'farmPassword',
+            usernameField: 'email',
+            passwordField: 'password',
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
 
@@ -20,7 +20,7 @@ module.exports = function (passport, user) {
 
             User.findOne({
                 where: {
-                    farmEmail: email
+                    email: email
                 }
             }).then(function (user) {
 
