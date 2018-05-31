@@ -1,17 +1,17 @@
-INSERT INTO Farmers (farmName, farmContact, farmZip, createdAt, updatedAt) VALUES ('Sunny Brook', 'Tony B', 19118, NOW(), NOW());
-INSERT INTO Farmers (farmName, farmContact, farmZip, createdAt, updatedAt) VALUES ('Brookfieled', 'Cardi B', 19228, NOW(), NOW());
-INSERT INTO Farmers (farmName, farmContact, farmZip, createdAt, updatedAt) VALUES ('Old McDonalds', 'Mel C', 19264, NOW(), NOW());
-INSERT INTO Farmers (farmName, farmContact, farmZip, createdAt, updatedAt) VALUES ('Marathon Farm', 'Toni T', 19121, NOW(), NOW());
-INSERT INTO Farmers (farmName, farmContact, farmZip, createdAt, updatedAt) VALUES ('Old Yellers Animal Sanctuary', 'Old Y', 19023, NOW(), NOW());
-INSERT INTO Farmers (farmName, farmContact, farmZip, createdAt, updatedAt) VALUES ('Hippie Haven', 'Timothy L', 19788, NOW(), NOW());
+INSERT INTO Farmers (farmName, farmContact, farmZip) VALUES ('Sunny Brook', 'Tony B', 19118);
+INSERT INTO Farmers (farmName, farmContact, farmZip) VALUES ('Brookfieled', 'Cardi B', 19228);
+INSERT INTO Farmers (farmName, farmContact, farmZip) VALUES ('Old McDonalds', 'Mel C', 19264);
+INSERT INTO Farmers (farmName, farmContact, farmZip) VALUES ('Marathon Farm', 'Toni T', 19121);
+INSERT INTO Farmers (farmName, farmContact, farmZip) VALUES ('Old Yellers Animal Sanctuary', 'Old Y', 19023);
+INSERT INTO Farmers (farmName, farmContact, farmZip) VALUES ('Hippie Haven', 'Timothy L', 19788);
 
 
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Eggs', 'Poultry', 1, "fresh eggs", 1, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Chicken Thighs', 'Poultry', 1, "fresh chicken", 4, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Ground Beef', 'Meat',1, "fresh beef", 6, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Eggs', 'Poultry', 1, "fresh eggs", 3, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Chicken Breasts', 'Poultry', 1, "fresh chicken", 1, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Beef Tongue', 'Meat', 1, "fresh beef", 2, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Carrots', 'Vegetables', 1, "fresh picked", 6, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Cherry Pie', 'Pastries', 1, "fresh baked", 1, NOW(), NOW());
-INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID, createdAt, updatedAt) VALUES ('Salmon', 'Seafood', 1, "farm fresh salmon", 1, NOW(), NOW());
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Eggs', 'Poultry', 1, "fresh eggs", 1);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Chicken Thighs', 'Poultry', 1, "fresh chicken", 4);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Ground Beef', 'Meat',1, "fresh beef", 6);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Eggs', 'Poultry', 1, "fresh eggs", 3);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Chicken Breasts', 'Poultry', 1, "fresh chicken", 1);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Beef Tongue', 'Meat', 1, "fresh beef", 2);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Carrots', 'Vegetables', 1, "fresh eggs", 6);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Cherry Pie', 'Pastries', 1, "fresh chicken", 1);
+INSERT INTO Products (productName, productType, productAvailable, productDescription, farmerID) VALUES ('Salmon', 'Seafood', 1, "fresh beef", 1);

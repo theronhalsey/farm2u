@@ -38,9 +38,36 @@ require("./routes/htmlRoutes")(app,passport);
 require("./routes/apiRoutes")(app, passport);
 require('./routes/auth.js')(app,passport);
 
+//app.use('/', routes);
+
 // Start our server so that it can begin listening to client requests.
-db.sequelize.sync().then(function() {
+//<<<<<<< HEAD
+//<<<<<<< HEAD
+//app.listen(PORT, function () {
+////    // Log (server-side) when our server has started
+//console.log("Server listening on: http://localhost:" + PORT);
+//}); 
+
+ db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-});
+}); 
+//=======
+//=======
+//>>>>>>> ae6747acafa679d958804d07002aeb9a183e1a37
+///* app.listen(PORT, function() {
+//    // Log (server-side) when our server has started
+//  console.log("Server listening on: http://localhost:" + PORT);
+//}); 
+// */
+//db.sequelize.sync().then(function() {
+//  app.listen(PORT, function() {
+//    console.log("App listening on PORT " + PORT);
+//  });
+//<<<<<<< HEAD
+//});
+//>>>>>>> f8f21f0f5653434f2b0d704c6bf535e8fe80a293
+//=======
+//});
+//>>>>>>> ae6747acafa679d958804d07002aeb9a183e1a37
