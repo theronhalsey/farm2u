@@ -8,9 +8,7 @@
                     <div class="row">
                         <div class="span12">
                             <div class="top1_inner clearfix">
-                                <div class="phone1">Need Help? Call us:
-                                    <span>1.123.456.7890</span>
-                                </div>
+                                <div class="phone1">Need Help? Call us: <span>1.123.456.7890</span></div>
                                 <div class="phone2 clearfix">
                                     <div class="txt1">Follow us:</div>
                                     <div class="social_wrapper">
@@ -47,8 +45,8 @@
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li><a href="/customer">Create Customer Account</a></li>
                                                         <li><a href="/farmer">Register Farm / Organic Business</a></li>
-                                                        <li><a href="/farmer_login">Login Farm / Organic Business</a></li>
                                                     </ul>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +59,7 @@
 
         <div id="slider" class="clearfix">
             <div id="camera_wrap">
-                <div data-src="images/slide1.jpg"></div>
+                <div data-src="/assets/images/slide1.jpg"></div>
             </div>
         </div>
 
@@ -83,29 +81,26 @@
                             <div class="row">
                                 <div class="span9">
 
-                                    <h1>Register as a Customer</h1>
+                                    <h1>Please Log In</h1>
 
                                     <div class="thumb3">
                                         <div class="thumbnail clearfix">
                                             <figure class="img-polaroid">
-                                                <img src="images/company01.jpg" alt="">
+                                                <img src="/assets/images/company01.jpg" alt="">
                                             </figure>
                                             <div class="caption">
                                                 <h4>
-                                                    Create a Customer Profile with Us
+                                                    If you already have an account, enter farm email and password below.
                                                 </h4>
                                                 <div class="bot2 clearfix">
                                                     <div class="search-form-wrapper clearfix">
-                                                        <form id="cust-reg" accept-charset="utf-8">
-                                                            <input type="text" id="cust-name" name="s" value='Customer Name' onBlur="if(this.value=='') this.value='Customer Name'" onFocus="if(this.value =='Customer Name' ) this.value=''">
-                                                            <input type="text" id="cust-email" name="s" value='Customer Email' onBlur="if(this.value=='') this.value='Customer Email'"
-                                                                onFocus="if(this.value =='Customer Email' ) this.value=''">
-                                                            <input type="text" id="cust-zip" name="s" value='Customer Zip Code' onBlur="if(this.value=='') this.value='Customer Zip Code'"
-                                                                onFocus="if(this.value =='Customer Zip Code' ) this.value=''">
-                                                            <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                                                        <form id="farm-login" accept-charset="utf-8">
+                                                            <h2>Farm Login</h2>
+                                                            <input type="email" id="farm-email" name="s" value='Farm Email' onBlur="if(this.value=='') this.value='Farm Email'" onFocus="if(this.value =='Farm Email' ) this.value=''">
+                                                            <input type="password" id="farm-password" name="s" value='Password' onBlur="if(this.value=='') this.value='Password'" onFocus="if(this.value =='Password' ) this.value=''">
                                                         </form>
                                                         <div class="btn-group" role="group" aria-label="...">
-                                                            <button type="button" class="btn btn-success">Submit</button>
+                                                            <button id="farmerLogin" type="button" class="btn btn-success FARMER">Login</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -114,12 +109,56 @@
                                     </div>
 
                                     <div class="line1"></div>
+
+
+                                    <div class="span3">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="span9">
+
+                                    <h1>Register You Farm or Organic Business</h1>
+
+                                    <div class="thumb3">
+                                        <div class="thumbnail clearfix">
+                                            <figure class="img-polaroid">
+                                                <img src="/assets/images/gallery02.jpg" alt="">
+                                            </figure>
+                                            <div class="caption">
+                                                <h4>
+                                                    If you don't have an account, sign up now so customers can find you.
+                                                </h4>
+                                                <div class="bot2 clearfix">
+                                                    <div class="search-form-wrapper clearfix">
+                                                        <form id="farm-reg" accept-charset="utf-8">
+                                                            <h2>Farm Details</h2>
+                                                            <input type="text" id="farm-name" name="s" value='Farm Name' onBlur="if(this.value=='') this.value='Farm Name'" onFocus="if(this.value =='Farm Name' ) this.value=''">
+                                                            <input type="text" id="farm-cont" name="s" value='Farm Contact' onBlur="if(this.value=='') this.value='Farm Contact'" onFocus="if(this.value =='Farm Contact' ) this.value=''">
+                                                            <input type="text" id="farm-zip" name="s" value='Farm Zip Code' onBlur="if(this.value=='') this.value='Farm Zip Code'" onFocus="if(this.value =='Farm Zip Code' ) this.value=''">
+                                                            <input type="email" id="farm-email" name="s" value='Farm Email' onBlur="if(this.value=='') this.value='Farm Email'" onFocus="if(this.value =='Farm Email' ) this.value=''">
+                                                            <input type="password" id="farm-password1" name="s" value='Password' onBlur="if(this.value=='') this.value='Password'" onFocus="if(this.value =='Password' ) this.value=''">
+                                                            <input type="password" id="conf-farm-password" name="s" value='Confirm Password' onBlur="if(this.value=='') this.value='Confirm Password'" onFocus="if(this.value =='Confirm Password' ) this.value=''">
+                                                        </form>
+                                                        <div class="btn-group" role="group" aria-label="...">
+                                                            <button id="farmerCreate" type="button" class="btn btn-success FARMER">Create Farm</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="line1"></div>
+
+
                                     <div class="span3">
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
@@ -133,7 +172,9 @@
                                 <div class="bot1">
                                     <div class="menu_bot">
                                         <ul id="menu_bot" class="clearfix">
-                                            <li><a href="index-1.html">Home</a></li>
+                                            <li>
+                                                <a href="/">Home</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -153,40 +194,43 @@
             </footer>
 
         </div>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
 
-        <script type="text/javascript">
+    </div>
+    {{!--
+        <script type="text/javascript" src="js/bootstrap.js"></script> --}}
+    <script type="text/javascript">
 
-            $(document).ready(function () {
+        function createFarmer() {
+            var farm = {
+                farmId: $("#farm-name").val().trim(),
+                farmName: $("#farm-cont").val().trim(),
+                farmZip: $("#farm-zip").val().trim(),
+                farmEmail: $("#farm-email").val().trim(),
+                farmPassword: $("#farm-password1").val().trim()
+            };
+            $.post("api/farmer-signup", farm, function (data) {
+                console.log('Create Farmer POST FIRED!')
 
-                var customer = {
-                    customerName: $("cust-name").val().trim(),
-                    customerEmail: $("#cust-email").val().trim(),
-                    customerZip: $("#cust-zip").val().trim()
-                };
+            });
+        }
 
-                $(document).on("submit", "#search-form", handleCustomerForm);
+        $('#farmerCreate').click(function () {
+            console.log($("#farm-password1").val());
+            console.log($("#conf-farm-password").val());
 
-                function handleCustomerForm(event) {
-                    event.preventDefault();
-                    console.log("it worked");
-
-                }
-
-
-                //$('submit').click(function () {
-
-                // console.log('POST FIRED!')
-
-
-                //})
-
-                $.post("/api/customer", customer, function (data) {
-
-
-                });
+            event.preventDefault();
+            if ($("#conf-farm-password").val() === $("farm-password1").val()) {
+                createFarmer();
             }
-        </script>
-</body>
+            else {
+                alert("Passwords must match.  Please re-enter passwords.");
+                $("#farm-password1").val() = "";
+                $("#conf-farm-password").val() = "";
+                $("#farm-password1").focus();
+            }
 
+        })
+
+    </script>
+</body>
 </html>

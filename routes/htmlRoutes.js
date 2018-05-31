@@ -13,4 +13,8 @@ module.exports = function (app) {
         console.log("sending farmer file");
         res.render("farmer");
     });
+    app.get('/farmer_login', function (req, res) {
+        console.log("sending farmer login file");
+        res.render("farmer_login");
+    });
 };
