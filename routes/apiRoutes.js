@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
     
     //get a farm by id
-    app.get("/api/farm_id/:id", function (req, res) {
+    app.get("/api/farms/:id", function (req, res) {
         db.Farmer.findOne({
             where: {
                 ID: req.params.id
@@ -23,7 +23,7 @@ module.exports = function (app) {
     });
 
     //get a product by id
-    app.get("/api/product_id/:id", function (req, res) {
+    app.get("/api/products/:id", function (req, res) {
         db.Product.findOne({
             where: {
                 ID: req.params.id
@@ -34,20 +34,9 @@ module.exports = function (app) {
         });
     });
 
-    //get all product by name
-    app.get("/api/product_name/:name", function (req, res) {
-        db.Product.findAll({
-            where: {
-                productName: req.params.name
-            },
-            include: [db.Farmer]
-        }).then(function (dbProduct) {
-            res.json(dbProduct);
-        });
-    });
-
     //get all products
     app.get("/api/products/", function (req, res) {
+        console.log('hello');
         db.Product.findAll({
             include: [db.Farmer]
         }).then(function (dbProduct) {
@@ -57,9 +46,24 @@ module.exports = function (app) {
 
     //get all products of a type
     app.get("/api/product_type/:productType", function (req, res) {
+        console.log("this is what the front end sends the api " + req.params);
+        console.log('hello');
         db.Product.findAll({
             where: {
-                productType: req.params.productType
+                productType: req.params
+            },
+            include: [db.Farmer]
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+            console.log("this is the return of the api " + dbProduct)
+        });
+    });
+
+    //get all products by name
+    app.get("/api/product_name/:productName", function (req, res) {
+        db.Product.findAll({
+            where: {
+                productName: req.params.productName
             },
             include: [db.Farmer]
         }).then(function (dbProduct) {
@@ -101,7 +105,7 @@ module.exports = function (app) {
     //post new product
     app.post("/api/products", function (req, res) {
         db.Product.create(req.body).then(function (dbProduct) {
-            console.log(req.body)
+            console.log(req.body);
             res.json(dbProduct);
         });
     });
